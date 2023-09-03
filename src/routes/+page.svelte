@@ -1,11 +1,7 @@
 <script lang="ts">
-	import GuessCard from '../lib/GuessCard.svelte';
+	import GuessCard from '../lib/components/GuessCard.svelte';
 	import LTMap from '$lib/assets/lt.svg';
-
-	const guesses: Guess[] = [
-		{ name: 'Vilnius', distance: 130 },
-		{ name: 'Kaunas', distance: 45 }
-	];
+	import { guessStore } from '$lib/stores/guess';
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
@@ -14,7 +10,7 @@
 
 	<!-- Dynamically increasing list of guesses below the input field -->
 	<ul class="list w-7/12 max-w-sm space-y-3">
-		{#each guesses as guess}
+		{#each $guessStore as guess}
 			<GuessCard {guess} />
 		{/each}
 	</ul>
@@ -22,8 +18,9 @@
 
 <!--
 	TODO:
-	Display guess dynamically
-	Dropdown selection menu for available guesses
-	Try to implement guessed cities onto the map
-	
+	- Display guesses dynamically
+	- Distance to correct city calculation using the formula:
+		acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+	- Dropdown selection menu for available guesses
+	- Try to implement guessed cities onto the map
 -->

@@ -7,8 +7,3 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
-
-declare interface Guess {
-	name: string;
-	distance: number;
-}
