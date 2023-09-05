@@ -1,12 +1,15 @@
 <script lang="ts">
+	import { Autocomplete } from '@skeletonlabs/skeleton';
+	import type { AutocompleteOption } from '@skeletonlabs/skeleton';
 	import GuessCard from '../lib/components/GuessCard.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { resetGuessStore, addToGuessStore, guessStore } from '$lib/stores/guess-store';
 	import cities from '$lib/assets/lt.json';
 	import { calcDistance } from '$lib/utility';
 
-	let currentGuess = '';
-	let correctGuess = 'Vilnius';
+	let currentGuess: string = '';
+	let correctGuess: string = 'Vilnius';
+	let valueSingle: string = 'books';
 
 	function getCityData(cityName: string) {
 		const cityPosition = cities.findIndex((city) => {
@@ -24,7 +27,6 @@
 			Number(correctCityData.lat),
 			Number(correctCityData.lng)
 		);
-		console.log(distance);
 		addToGuessStore(currentGuess, Math.round(distance));
 		currentGuess = '';
 	}
@@ -33,7 +35,8 @@
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
 	<img class="max-w-md pt-20" src={LTMap} alt="Map of Lithuania" />
 	<input
-		class="input my-10 h-12 max-w-md p-4 text-center text-xl drop-shadow-xl"
+		list="cities"
+		class="input mt-10 h-12 max-w-md p-4 text-center text-xl drop-shadow-xl"
 		placeholder="Enter a city in Lithuania..."
 		bind:value={currentGuess}
 		on:keydown={(e) => {
@@ -57,13 +60,11 @@
 
 <!--
 	TODO:
-	- Display guesses dynamically
-	- Distance to correct city calculation using the formula:
-		acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
 	- Dropdown selection menu for available guesses
+	- Auto focus on keydown
 	- Try to implement guessed cities onto the map
 	- Guess list and correct guess animations
-	- Hint system
+	- Hint system (first letter, population)
 	- Server/Client side modifications
 	- Deployment on Vercel
 -->
