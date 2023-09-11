@@ -20,14 +20,16 @@
 
 	function handleInput() {
 		const guessCityData = getCityData(currentGuess);
+		if (guessCityData == null) return;
 		const correctCityData = getCityData(correctGuess);
+
 		const distance = calcDistance(
 			Number(guessCityData.lat),
 			Number(guessCityData.lng),
 			Number(correctCityData.lat),
 			Number(correctCityData.lng)
 		);
-		addToGuessStore(currentGuess, Math.round(distance));
+		addToGuessStore(guessCityData.city, Math.round(distance));
 		currentGuess = '';
 	}
 </script>
@@ -50,7 +52,8 @@
 
 <!--
 	TODO:
-	- Focus fixes (On input, On autocomplete selection)
+	- Add input button instead of Enter (input group with input field)
+	- Remove option from options list after guessing it
 	- Game loop, select correct word with global timer
 	- Try to implement guessed cities onto the map
 	- Guess list and correct guess animations

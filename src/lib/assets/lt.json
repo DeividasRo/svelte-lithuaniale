@@ -264,17 +264,6 @@
     "population_proper": "11753"
   },
   {
-    "city": "Aukštieji Paneriai",
-    "lat": "54.6000",
-    "lng": "25.2000",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilniaus Miestas",
-    "capital": "",
-    "population": "11149",
-    "population_proper": "11149"
-  },
-  {
     "city": "Kuršėnai",
     "lat": "55.9833",
     "lng": "22.9167",
@@ -1111,39 +1100,6 @@
     "population_proper": "1332"
   },
   {
-    "city": "Vilainiai",
-    "lat": "55.3000",
-    "lng": "24.0031",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kėdainiai",
-    "capital": "",
-    "population": "1330",
-    "population_proper": "1330"
-  },
-  {
-    "city": "Padvariai",
-    "lat": "55.9083",
-    "lng": "21.2833",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kretinga",
-    "capital": "",
-    "population": "1308",
-    "population_proper": "1308"
-  },
-  {
-    "city": "Didžiasalis",
-    "lat": "55.3194",
-    "lng": "26.6806",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Ignalina",
-    "capital": "",
-    "population": "1299",
-    "population_proper": "1299"
-  },
-  {
     "city": "Veisiejai",
     "lat": "54.1000",
     "lng": "23.7000",
@@ -1177,17 +1133,6 @@
     "population_proper": "1217"
   },
   {
-    "city": "Riešė",
-    "lat": "54.8083",
-    "lng": "25.2389",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "1234",
-    "population_proper": "1234"
-  },
-  {
     "city": "Galgiai",
     "lat": "54.7190",
     "lng": "25.4170",
@@ -1197,17 +1142,6 @@
     "capital": "",
     "population": "1230",
     "population_proper": "1230"
-  },
-  {
-    "city": "Matuizos",
-    "lat": "54.2833",
-    "lng": "24.6833",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Varėna",
-    "capital": "",
-    "population": "1201",
-    "population_proper": "1201"
   },
   {
     "city": "Simnas",
@@ -1287,28 +1221,6 @@
     "population_proper": "1100"
   },
   {
-    "city": "Vidiškės",
-    "lat": "55.3750",
-    "lng": "26.2111",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Ignalina",
-    "capital": "",
-    "population": "1084",
-    "population_proper": "1084"
-  },
-  {
-    "city": "Gineitiškės",
-    "lat": "54.7390",
-    "lng": "25.2000",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "1082",
-    "population_proper": "1082"
-  },
-  {
     "city": "Baltoji Vokė",
     "lat": "54.4500",
     "lng": "25.1333",
@@ -1329,28 +1241,6 @@
     "capital": "",
     "population": "1055",
     "population_proper": "1055"
-  },
-  {
-    "city": "Miklusėnai",
-    "lat": "54.4417",
-    "lng": "23.9972",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Alytus",
-    "capital": "",
-    "population": "1044",
-    "population_proper": "1044"
-  },
-  {
-    "city": "Mokolai",
-    "lat": "54.5720",
-    "lng": "23.3390",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Marijampolė",
-    "capital": "",
-    "population": "1031",
-    "population_proper": "1031"
   },
   {
     "city": "Plateliai",
