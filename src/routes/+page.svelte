@@ -4,23 +4,21 @@
 	import LTMap from '$lib/assets/lt.svg';
 	import { resetGuessStore, addToGuessStore, guessStore } from '$lib/stores/guess-store';
 	import { calcDistance } from '$lib/utility';
-	import cities from '$lib/assets/lt.json';
+	import {
+		citiesStore,
+		getCityNames,
+		getCityData,
+		removeFromCityStore,
+		resetCitiesStore
+	} from '$lib/stores/cities-store';
 
 	let correctGuess: string = 'Vilnius';
 	let currentGuess: string = '';
-
-	let cityNames: string[] = cities.map((value) => value.city).sort();
-
-	function getCityData(cityName: string) {
-		const cityPosition = cities.findIndex((city) => {
-			return city.city.toLowerCase() == cityName.toLowerCase();
-		});
-		return cities[cityPosition];
-	}
+	let cityNames: string[];
+	$: $citiesStore, (cityNames = getCityNames());
 
 	function handleInput() {
 		const guessCityData = getCityData(currentGuess);
-		if (guessCityData == null) return;
 		const correctCityData = getCityData(correctGuess);
 
 		const distance = calcDistance(
@@ -29,7 +27,9 @@
 			Number(correctCityData.lat),
 			Number(correctCityData.lng)
 		);
+
 		addToGuessStore(guessCityData.city, Math.round(distance));
+		removeFromCityStore(guessCityData.city);
 		currentGuess = '';
 	}
 </script>
@@ -45,14 +45,19 @@
 		{/each}
 	</ul>
 
-	<button class="variant-filled-secondary btn my-6 text-2xl" on:click={() => resetGuessStore()}
-		>Reset</button
+	<button
+		class="variant-filled-secondary btn my-6 text-2xl"
+		on:click={() => {
+			resetGuessStore();
+			resetCitiesStore();
+			currentGuess = '';
+		}}>Reset</button
 	>
 </div>
 
 <!--
 	TODO:
-	- Remove option from options list after guessing it
+	- Popup closing transition fix (faster or removed) CHECK DISCORD
 	- Try to implement guessed cities onto the map
 	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
