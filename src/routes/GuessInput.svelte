@@ -2,12 +2,12 @@
 	import { Autocomplete, popup } from '@skeletonlabs/skeleton';
 	import type { AutocompleteOption, PopupSettings } from '@skeletonlabs/skeleton';
 	import { createEventDispatcher } from 'svelte';
+	import Icon from '@iconify/svelte';
 
 	const dispatch = createEventDispatcher();
 
 	export let inputValue: string;
 	export let options: string[];
-	let inputRef: HTMLInputElement;
 	const flavorOptions: AutocompleteOption[] = [];
 
 	options.forEach((optionName) => flavorOptions.push({ label: optionName, value: optionName }));
@@ -19,31 +19,38 @@
 	};
 
 	function onFlavorSelection(event: CustomEvent<AutocompleteOption>): void {
-		inputRef.focus();
 		inputValue = event.detail.label;
 	}
 
 	function onInput() {
-		dispatch('input');
+		if (inputValue != '') {
+			dispatch('input');
+		}
 	}
 </script>
 
-<input
-	type="search"
-	name="autocomplete-search"
-	class="autocomplete input my-10 h-12 max-w-md p-4 text-center text-xl outline-none drop-shadow-xl"
-	placeholder="Enter a city in Lithuania..."
-	bind:this={inputRef}
-	bind:value={inputValue}
-	use:popup={popupSettings}
-	on:keydown={(e) => {
-		if (e.key === 'Enter') {
-			onInput();
-		}
-	}}
-/>
 <div
-	class="card z-20 -mt-2 max-h-60 w-full max-w-xs overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 p-2 text-lg font-semibold"
+	class=" input-group input-group-divider my-10 h-12 min-h-[3rem] max-w-sm grid-cols-[85%_15%] drop-shadow-xl"
+>
+	<input
+		type="search"
+		name="autocomplete-search"
+		class="autocomplete search pl-6 text-left text-xl outline-none"
+		placeholder="Enter a city in Lithuania..."
+		bind:value={inputValue}
+		use:popup={popupSettings}
+	/>
+	<button
+		class="variant-filled-secondary !pl-3 !pr-2 outline-none active:opacity-90"
+		on:click={() => {
+			onInput();
+		}}
+	>
+		<Icon color="#035c09" width="32" icon="akar-icons:send" />
+	</button>
+</div>
+<div
+	class="card z-20 -mt-2 ml-2 max-h-60 w-[19rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 p-2 text-lg font-semibold"
 	tabindex="-1"
 	data-popup="popupAutocomplete"
 >

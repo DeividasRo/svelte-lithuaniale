@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GuessInput from '../lib/components/GuessInput.svelte';
+	import GuessInput from './GuessInput.svelte';
 	import GuessCard from '../lib/components/GuessCard.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { resetGuessStore, addToGuessStore, guessStore } from '$lib/stores/guess-store';
@@ -52,10 +52,9 @@
 
 <!--
 	TODO:
-	- Add input button instead of Enter (input group with input field)
 	- Remove option from options list after guessing it
-	- Game loop, select correct word with global timer
 	- Try to implement guessed cities onto the map
+	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
 	- Hint system (first letter, population)
 	- Server/Client side modifications
