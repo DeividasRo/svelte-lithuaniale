@@ -35,7 +35,10 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
-	<img class="max-w-md pt-20" src={LTMap} alt="Map of Lithuania" />
+	<div class="relative mt-5 border md:mt-10">
+		<img class="max-w-xs md:max-w-md" src={LTMap} alt="Map of Lithuania" />
+		<div class="absolute left-[200px] top-[200px] h-2 w-2 rounded-full bg-red-400" />
+	</div>
 	<GuessInput bind:inputValue={currentGuess} options={cityNames} on:input={handleInput} />
 
 	<!-- Dynamically increasing list of guesses below the input field -->
@@ -57,11 +60,15 @@
 
 <!--
 	TODO:
-	- Popup closing transition fix (faster or removed) CHECK DISCORD
-	- Try to implement guessed cities onto the map
+	- Try to implement guessed cities onto the map:
+		make a city point component
+		not guessed city points are grey
+		guessed city points are red with on hover popup displaying their name
+		two different coordinates for each city (dekstop and mobile size map)
 	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
 	- Hint system (first letter, population)
 	- Server/Client side modifications
 	- Deployment on Vercel
+	- Adjustments for mobile
 -->

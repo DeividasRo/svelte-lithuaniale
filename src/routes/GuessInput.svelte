@@ -23,7 +23,9 @@
 		event: 'focus-click',
 		target: 'popupAutocomplete',
 		placement: 'bottom',
-		closeQuery: ''
+		middleware: {
+			autoPlacement: { allowedPlacements: ['bottom'] }
+		}
 	};
 
 	function onFlavorSelection(event: CustomEvent<AutocompleteOption>): void {
@@ -38,7 +40,7 @@
 </script>
 
 <div
-	class=" input-group input-group-divider my-10 h-12 min-h-[3rem] max-w-sm grid-cols-[85%_15%] drop-shadow-xl"
+	class=" input-group input-group-divider my-5 h-12 min-h-[3rem] max-w-xs grid-cols-[85%_15%] drop-shadow-xl md:my-10 md:max-w-sm"
 >
 	<input
 		type="search"
@@ -58,7 +60,7 @@
 	</button>
 </div>
 <div
-	class="card z-20 -mt-2 ml-[0.6rem] max-h-60 w-[19rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 p-2 text-lg font-semibold"
+	class="text-md card z-20 -mt-2 max-h-32 w-[15rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 p-1 font-semibold md:ml-[0.6rem] md:max-h-56 md:w-[19rem] md:text-lg"
 	tabindex="-1"
 	data-popup="popupAutocomplete"
 >
