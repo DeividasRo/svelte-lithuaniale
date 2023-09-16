@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GuessInput from './GuessInput.svelte';
+	import GuessInput from '../lib/components/GuessInput.svelte';
 	import GuessCard from '../lib/components/GuessCard.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { resetGuessStore, addToGuessStore, guessStore } from '$lib/stores/guess-store';
@@ -11,6 +11,7 @@
 		removeFromCityStore,
 		resetCitiesStore
 	} from '$lib/stores/cities-store';
+	import CityPoint from '$lib/components/CityPoint.svelte';
 
 	let correctGuess: string = 'Vilnius';
 	let currentGuess: string = '';
@@ -35,9 +36,11 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
-	<div class="relative mt-5 border md:mt-10">
+	<div class="relative mt-5 md:mt-10">
 		<img class="max-w-xs md:max-w-md" src={LTMap} alt="Map of Lithuania" />
-		<div class="absolute left-[200px] top-[200px] h-2 w-2 rounded-full bg-red-400" />
+		{#each $citiesStore as city}
+			<CityPoint lat={Number(city.lat)} lon={Number(city.lng)} mapHeight={328} mapWidth={413} />
+		{/each}
 	</div>
 	<GuessInput bind:inputValue={currentGuess} options={cityNames} on:input={handleInput} />
 
@@ -61,10 +64,10 @@
 <!--
 	TODO:
 	- Try to implement guessed cities onto the map:
-		make a city point component
+		point size depends on population
+		two different coordinates for each city (dekstop and mobile size map)
 		not guessed city points are grey
 		guessed city points are red with on hover popup displaying their name
-		two different coordinates for each city (dekstop and mobile size map)
 	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
 	- Hint system (first letter, population)
