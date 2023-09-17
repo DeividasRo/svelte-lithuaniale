@@ -19,6 +19,17 @@ export const getCityNames = () => {
     return cities.map((value) => value.city).sort();
 }
 
+export const setCityGuessStatus = (cityName: string, status: boolean) => {
+    let cities = get(citiesStore);
+    const cityPosition = cities.findIndex((city) => {
+        return city.city.toLowerCase() == cityName.toLowerCase();
+    });
+    citiesStore.update(() => {
+        cities[cityPosition].guessed = status;
+        return cities;
+    });
+}
+
 export const removeFromCityStore = (cityName: string) => {
     let cities = get(citiesStore);
     const cityPosition = cities.findIndex((city) => {
@@ -31,6 +42,7 @@ export const removeFromCityStore = (cityName: string) => {
 }
 
 export const resetCitiesStore = () => {
-    const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population, population_proper, ...keepAttrs }) => keepAttrs);
+    const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
+
     citiesStore.set(cities);
 }

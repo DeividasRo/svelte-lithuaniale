@@ -23,8 +23,8 @@
   },
   {
     "city": "Klaipėda",
-    "lat": "55.7500",
-    "lng": "21.1667",
+    "lat": "55.7033",
+    "lng": "21.1443",
     "country": "Lithuania",
     "iso2": "LT",
     "admin_name": "Klaipėdos Miestas",
@@ -649,17 +649,6 @@
     "population_proper": "4142"
   },
   {
-    "city": "Skaidiškės",
-    "lat": "54.6081",
-    "lng": "25.3861",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "4133",
-    "population_proper": "4133"
-  },
-  {
     "city": "Kalvarija",
     "lat": "54.4167",
     "lng": "23.2167",
@@ -781,17 +770,6 @@
     "population_proper": "2631"
   },
   {
-    "city": "Didžioji Reišė",
-    "lat": "54.8028",
-    "lng": "25.2639",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "",
-    "capital": "",
-    "population": "2520",
-    "population_proper": "2520"
-  },
-  {
     "city": "Nemėžis",
     "lat": "54.6361",
     "lng": "25.3611",
@@ -847,17 +825,6 @@
     "population_proper": "2155"
   },
   {
-    "city": "Avižieniai",
-    "lat": "54.7639",
-    "lng": "25.1831",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "2125",
-    "population_proper": "2125"
-  },
-  {
     "city": "Rukla",
     "lat": "55.0528",
     "lng": "24.3778",
@@ -869,28 +836,6 @@
     "population_proper": "2098"
   },
   {
-    "city": "Valčiūnai",
-    "lat": "54.5611",
-    "lng": "25.2639",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "2089",
-    "population_proper": "2089"
-  },
-  {
-    "city": "Baisogala",
-    "lat": "55.6389",
-    "lng": "23.7222",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Radviliškis",
-    "capital": "",
-    "population": "2034",
-    "population_proper": "2034"
-  },
-  {
     "city": "Tytuvėnai",
     "lat": "55.6000",
     "lng": "23.2000",
@@ -900,39 +845,6 @@
     "capital": "",
     "population": "1841",
     "population_proper": "1774"
-  },
-  {
-    "city": "Viečiūnai",
-    "lat": "54.0583",
-    "lng": "24.0528",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Druskininkai",
-    "capital": "",
-    "population": "1708",
-    "population_proper": "1708"
-  },
-  {
-    "city": "Teleičiai",
-    "lat": "54.8440",
-    "lng": "23.8830",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kaunas",
-    "capital": "",
-    "population": "1700",
-    "population_proper": "1700"
-  },
-  {
-    "city": "Viduklė",
-    "lat": "55.4028",
-    "lng": "22.8972",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Raseiniai",
-    "capital": "",
-    "population": "1678",
-    "population_proper": "1678"
   },
   {
     "city": "Švėkšna",
@@ -968,17 +880,6 @@
     "population_proper": "1522"
   },
   {
-    "city": "Ramučiai",
-    "lat": "54.9472",
-    "lng": "24.0306",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kaunas",
-    "capital": "",
-    "population": "1583",
-    "population_proper": "1583"
-  },
-  {
     "city": "Ežerėlis",
     "lat": "54.8833",
     "lng": "23.6167",
@@ -988,28 +889,6 @@
     "capital": "",
     "population": "1583",
     "population_proper": "1583"
-  },
-  {
-    "city": "Babtai",
-    "lat": "55.0917",
-    "lng": "23.7944",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kaunas",
-    "capital": "",
-    "population": "1563",
-    "population_proper": "1563"
-  },
-  {
-    "city": "Josvainiai",
-    "lat": "55.2472",
-    "lng": "23.8333",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kėdainiai",
-    "capital": "",
-    "population": "1545",
-    "population_proper": "1545"
   },
   {
     "city": "Kudirkos Naumiestis",
@@ -1034,17 +913,6 @@
     "population_proper": "1198"
   },
   {
-    "city": "Kulautuva",
-    "lat": "54.9389",
-    "lng": "23.6500",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kaunas",
-    "capital": "",
-    "population": "1425",
-    "population_proper": "1364"
-  },
-  {
     "city": "Skaudvilė",
     "lat": "55.4075",
     "lng": "22.5825",
@@ -1054,17 +922,6 @@
     "capital": "",
     "population": "1425",
     "population_proper": "1370"
-  },
-  {
-    "city": "Senieji Trakai",
-    "lat": "54.6167",
-    "lng": "24.9667",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Trakai",
-    "capital": "",
-    "population": "1396",
-    "population_proper": "1396"
   },
   {
     "city": "Žagarė",
@@ -1089,17 +946,6 @@
     "population_proper": "1251"
   },
   {
-    "city": "Kužiai",
-    "lat": "55.9972",
-    "lng": "23.1444",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Šiauliai",
-    "capital": "",
-    "population": "1332",
-    "population_proper": "1332"
-  },
-  {
     "city": "Veisiejai",
     "lat": "54.1000",
     "lng": "23.7000",
@@ -1122,149 +968,6 @@
     "population_proper": "1251"
   },
   {
-    "city": "Linkuva",
-    "lat": "56.0833",
-    "lng": "23.9667",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Pakruojis",
-    "capital": "",
-    "population": "1246",
-    "population_proper": "1217"
-  },
-  {
-    "city": "Galgiai",
-    "lat": "54.7190",
-    "lng": "25.4170",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Vilnius",
-    "capital": "",
-    "population": "1230",
-    "population_proper": "1230"
-  },
-  {
-    "city": "Simnas",
-    "lat": "54.4000",
-    "lng": "23.6500",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Alytus",
-    "capital": "",
-    "population": "1198",
-    "population_proper": "1192"
-  },
-  {
-    "city": "Ylakiai",
-    "lat": "56.2806",
-    "lng": "21.8500",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Skuodas",
-    "capital": "",
-    "population": "1165",
-    "population_proper": "1165"
-  },
-  {
-    "city": "Kairiai",
-    "lat": "55.9167",
-    "lng": "23.4389",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Šiauliai",
-    "capital": "",
-    "population": "1158",
-    "population_proper": "1158"
-  },
-  {
-    "city": "Varniai",
-    "lat": "55.7333",
-    "lng": "22.3667",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Telšiai",
-    "capital": "",
-    "population": "1140",
-    "population_proper": "854"
-  },
-  {
-    "city": "Laukuva",
-    "lat": "55.6194",
-    "lng": "22.2333",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Šilalė",
-    "capital": "",
-    "population": "1140",
-    "population_proper": "1140"
-  },
-  {
-    "city": "Dovilai",
-    "lat": "55.6778",
-    "lng": "21.3556",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Klaipėda",
-    "capital": "",
-    "population": "1100",
-    "population_proper": "1100"
-  },
-  {
-    "city": "Veiveriai",
-    "lat": "54.7639",
-    "lng": "23.7250",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Prienai",
-    "capital": "",
-    "population": "1100",
-    "population_proper": "1100"
-  },
-  {
-    "city": "Baltoji Vokė",
-    "lat": "54.4500",
-    "lng": "25.1333",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Šalčininkai",
-    "capital": "",
-    "population": "1056",
-    "population_proper": "991"
-  },
-  {
-    "city": "Liudvinavas",
-    "lat": "54.4833",
-    "lng": "23.3528",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Marijampolė",
-    "capital": "",
-    "population": "1055",
-    "population_proper": "1055"
-  },
-  {
-    "city": "Plateliai",
-    "lat": "56.0500",
-    "lng": "21.8167",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Plungė",
-    "capital": "",
-    "population": "1021",
-    "population_proper": "1021"
-  },
-  {
-    "city": "Joniškėlis",
-    "lat": "56.0250",
-    "lng": "24.1694",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Pasvalys",
-    "capital": "",
-    "population": "1021",
-    "population_proper": "977"
-  },
-  {
     "city": "Širvintos",
     "lat": "55.0361",
     "lng": "24.9694",
@@ -1283,7 +986,7 @@
     "iso2": "LT",
     "admin_name": "Pagégiai",
     "capital": "admin",
-    "population": "1536",
+    "population": "1537",
     "population_proper": "57"
   }
 ]

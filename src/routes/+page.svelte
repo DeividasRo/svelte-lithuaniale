@@ -8,6 +8,7 @@
 		citiesStore,
 		getCityNames,
 		getCityData,
+		setCityGuessStatus,
 		removeFromCityStore,
 		resetCitiesStore
 	} from '$lib/stores/cities-store';
@@ -30,7 +31,9 @@
 		);
 
 		addToGuessStore(guessCityData.city, Math.round(distance));
-		removeFromCityStore(guessCityData.city);
+		setCityGuessStatus(guessCityData.city, true);
+		//removeFromCityStore(guessCityData.city);
+		console.log($citiesStore);
 		currentGuess = '';
 	}
 </script>
@@ -38,9 +41,19 @@
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
 	<div class="relative mt-5 md:mt-10">
 		<img class="max-w-xs md:max-w-md" src={LTMap} alt="Map of Lithuania" />
-		{#each $citiesStore as city}
-			<CityPoint lat={Number(city.lat)} lon={Number(city.lng)} mapHeight={328} mapWidth={413} />
-		{/each}
+		{#key { $citiesStore }}
+			{#each $citiesStore as city}
+				<CityPoint
+					name={city.city}
+					population={Number(city.population)}
+					lat={Number(city.lat)}
+					lon={Number(city.lng)}
+					mapHeight={320}
+					mapWidth={413}
+					guessed={city.guessed}
+				/>
+			{/each}
+		{/key}
 	</div>
 	<GuessInput bind:inputValue={currentGuess} options={cityNames} on:input={handleInput} />
 
@@ -64,10 +77,8 @@
 <!--
 	TODO:
 	- Try to implement guessed cities onto the map:
-		point size depends on population
-		two different coordinates for each city (dekstop and mobile size map)
-		not guessed city points are grey
-		guessed city points are red with on hover popup displaying their name
+		guessed cities have an on click/hover popup displaying their name
+		two different coordinates for each city (desktop and mobile size map)
 	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
 	- Hint system (first letter, population)
