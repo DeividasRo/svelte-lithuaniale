@@ -9,6 +9,7 @@
 		getCityNames,
 		getCityData,
 		setCityGuessStatus,
+		getOriginalCitiesStore,
 		removeFromCityStore,
 		resetCitiesStore
 	} from '$lib/stores/cities-store';
@@ -32,8 +33,7 @@
 
 		addToGuessStore(guessCityData.city, Math.round(distance));
 		setCityGuessStatus(guessCityData.city, true);
-		//removeFromCityStore(guessCityData.city);
-		console.log($citiesStore);
+		removeFromCityStore(guessCityData.city);
 		currentGuess = '';
 	}
 </script>
@@ -42,14 +42,12 @@
 	<div class="relative mt-5 md:mt-10">
 		<img class="max-w-xs md:max-w-md" src={LTMap} alt="Map of Lithuania" />
 		{#key { $citiesStore }}
-			{#each $citiesStore as city}
+			{#each getOriginalCitiesStore() as city}
 				<CityPoint
 					name={city.city}
 					population={Number(city.population)}
 					lat={Number(city.lat)}
 					lon={Number(city.lng)}
-					mapHeight={320}
-					mapWidth={413}
 					guessed={city.guessed}
 				/>
 			{/each}
@@ -78,7 +76,6 @@
 	TODO:
 	- Try to implement guessed cities onto the map:
 		guessed cities have an on click/hover popup displaying their name
-		two different coordinates for each city (desktop and mobile size map)
 	- Game loop, select correct word with global timer
 	- Guess list and correct guess animations
 	- Hint system (first letter, population)

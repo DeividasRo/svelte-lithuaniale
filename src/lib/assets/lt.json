@@ -276,8 +276,8 @@
   },
   {
     "city": "Grigiškės",
-    "lat": "54.6667",
-    "lng": "25.1000",
+    "lat": "54.6867",
+    "lng": "25.1500",
     "country": "Lithuania",
     "iso2": "LT",
     "admin_name": "Vilniaus Miestas",
@@ -561,17 +561,6 @@
     "population_proper": "5106"
   },
   {
-    "city": "Domeikava",
-    "lat": "54.9667",
-    "lng": "23.9167",
-    "country": "Lithuania",
-    "iso2": "LT",
-    "admin_name": "Kaunas",
-    "capital": "",
-    "population": "5006",
-    "population_proper": "5006"
-  },
-  {
     "city": "Švenčionėliai",
     "lat": "55.1667",
     "lng": "26.0000",
@@ -827,7 +816,7 @@
   {
     "city": "Rukla",
     "lat": "55.0528",
-    "lng": "24.3778",
+    "lng": "24.4378",
     "country": "Lithuania",
     "iso2": "LT",
     "admin_name": "Jonava",

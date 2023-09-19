@@ -46,3 +46,8 @@ export const resetCitiesStore = () => {
 
     citiesStore.set(cities);
 }
+
+export const getOriginalCitiesStore = () => {
+    const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
+    return cities;
+}
