@@ -4,7 +4,7 @@ import type { Writable } from 'svelte/store';
 import citiesJson from '$lib/assets/lt.json';
 
 export const citiesStore: Writable<City[]> = localStorageStore('citiesStore', [])
-
+export const cityNamesStore: Writable<string[]> = localStorageStore('cityNamesStore', [])
 
 export const getCityData = (cityName: string) => {
     let cities = get(citiesStore);
@@ -12,11 +12,6 @@ export const getCityData = (cityName: string) => {
         return city.city.toLowerCase() == cityName.toLowerCase();
     });
     return cities[cityPosition];
-}
-
-export const getCityNames = () => {
-    let cities = get(citiesStore);
-    return cities.map((value) => value.city).sort();
 }
 
 export const setCityGuessStatus = (cityName: string, status: boolean) => {
@@ -30,12 +25,12 @@ export const setCityGuessStatus = (cityName: string, status: boolean) => {
     });
 }
 
-export const removeFromCityStore = (cityName: string) => {
-    let cities = get(citiesStore);
-    const cityPosition = cities.findIndex((city) => {
-        return city.city.toLowerCase() == cityName.toLowerCase();
+export const removeCityStoreName = (cityNameToDelete: string) => {
+    let cities = get(cityNamesStore);
+    const cityPosition = cities.findIndex((cityName) => {
+        return cityName.toLowerCase() == cityNameToDelete.toLowerCase();
     });
-    citiesStore.update(() => {
+    cityNamesStore.update(() => {
         cities.splice(cityPosition, 1)
         return cities;
     });
@@ -43,11 +38,8 @@ export const removeFromCityStore = (cityName: string) => {
 
 export const resetCitiesStore = () => {
     const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
+    const cityNames: string[] = cities.map((city) => city.city)
 
+    cityNamesStore.set(cityNames.sort());
     citiesStore.set(cities);
-}
-
-export const getOriginalCitiesStore = () => {
-    const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
-    return cities;
 }

@@ -6,11 +6,10 @@
 	import { calcDistance } from '$lib/utility';
 	import {
 		citiesStore,
-		getCityNames,
+		cityNamesStore,
 		getCityData,
 		setCityGuessStatus,
-		getOriginalCitiesStore,
-		removeFromCityStore,
+		removeCityStoreName,
 		resetCitiesStore
 	} from '$lib/stores/cities-store';
 	import CityPoint from '$lib/components/CityPoint.svelte';
@@ -18,7 +17,6 @@
 	let correctGuess: string = 'Vilnius';
 	let currentGuess: string = '';
 	let cityNames: string[];
-	$: $citiesStore, (cityNames = getCityNames());
 
 	function handleInput() {
 		const guessCityData = getCityData(currentGuess);
@@ -33,7 +31,7 @@
 
 		addToGuessStore(guessCityData.city, Math.round(distance));
 		setCityGuessStatus(guessCityData.city, true);
-		removeFromCityStore(guessCityData.city);
+		removeCityStoreName(guessCityData.city);
 		currentGuess = '';
 	}
 </script>
@@ -42,7 +40,7 @@
 	<div class="relative mt-5 md:mt-10">
 		<img class="max-w-xs md:max-w-md" src={LTMap} alt="Map of Lithuania" />
 		{#key { $citiesStore }}
-			{#each getOriginalCitiesStore() as city}
+			{#each $citiesStore as city}
 				<CityPoint
 					name={city.city}
 					population={Number(city.population)}
@@ -53,7 +51,7 @@
 			{/each}
 		{/key}
 	</div>
-	<GuessInput bind:inputValue={currentGuess} options={cityNames} on:input={handleInput} />
+	<GuessInput bind:inputValue={currentGuess} options={$cityNamesStore} on:input={handleInput} />
 
 	<!-- Dynamically increasing list of guesses below the input field -->
 	<ul class="list w-7/12 max-w-sm space-y-3">
@@ -74,12 +72,9 @@
 
 <!--
 	TODO:
-	- Try to implement guessed cities onto the map:
-		guessed cities have an on click/hover popup displaying their name
 	- Game loop, select correct word with global timer
-	- Guess list and correct guess animations
+	- Guess list, map points animations
+	- Deployment on Vercel
 	- Hint system (first letter, population)
 	- Server/Client side modifications
-	- Deployment on Vercel
-	- Adjustments for mobile
 -->
