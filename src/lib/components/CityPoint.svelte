@@ -33,23 +33,23 @@
 		}
 		yd = smallScreen ? 2.52 : 2.42;
 		xd = smallScreen ? 5.9 : 5.44;
-		y = Math.round(((lat - 53.92) / yd) * (smallScreen ? 237 : 320));
+		y = Math.round(((lat - 53.93) / yd) * (smallScreen ? 237 : 320));
 		x = Math.round(((lon - 20.99) / xd) * (smallScreen ? 319 : 413));
 		if (population < 5000) {
-			h = smallScreen ? 5 : 8;
-			w = smallScreen ? 5 : 8;
+			h = smallScreen ? 7 : 9;
+			w = smallScreen ? 7 : 9;
 		} else if (population < 12500) {
-			h = smallScreen ? 7 : 10;
-			w = smallScreen ? 7 : 10;
+			h = smallScreen ? 9 : 11;
+			w = smallScreen ? 9 : 11;
 		} else if (population < 25000) {
-			h = smallScreen ? 9 : 13;
-			w = smallScreen ? 9 : 13;
+			h = smallScreen ? 11 : 14;
+			w = smallScreen ? 11 : 14;
 		} else if (population < 40000) {
-			h = smallScreen ? 11 : 16;
-			w = smallScreen ? 11 : 16;
+			h = smallScreen ? 13 : 17;
+			w = smallScreen ? 13 : 17;
 		} else {
-			h = smallScreen ? 15 : 20;
-			w = smallScreen ? 15 : 20;
+			h = smallScreen ? 16 : 21;
+			w = smallScreen ? 16 : 21;
 		}
 	}
 
@@ -76,6 +76,7 @@
 	style={`bottom: ${y}px; left: ${x}px; height:${h}px; width:${w}px; background-color: ${bgColor}`}
 	use:popup={popupHover}
 />
+
 <div class="card variant-filled-secondary z-50 px-2 py-1" data-popup={`popupHover${name}`}>
 	<p class="md:text-md whitespace-nowrap text-sm font-semibold">{name}</p>
 	<div class="variant-filled-secondary arrow" />
