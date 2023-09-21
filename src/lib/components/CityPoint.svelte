@@ -7,7 +7,7 @@
 	export let population: number;
 	export let lat: number;
 	export let lon: number;
-	export let guessed: boolean;
+	export let isAnswer: boolean;
 
 	let innerWidth: number;
 	let smallScreen: boolean;
@@ -31,9 +31,9 @@
 		if (!browser) {
 			return;
 		}
-		yd = smallScreen ? 2.55 : 2.42;
+		yd = smallScreen ? 2.52 : 2.42;
 		xd = smallScreen ? 5.9 : 5.44;
-		y = Math.round(((lat - 53.91) / yd) * (smallScreen ? 237 : 320));
+		y = Math.round(((lat - 53.92) / yd) * (smallScreen ? 237 : 320));
 		x = Math.round(((lon - 20.99) / xd) * (smallScreen ? 319 : 413));
 		if (population < 5000) {
 			h = smallScreen ? 5 : 8;
@@ -54,8 +54,8 @@
 	}
 
 	let bgColor: string;
-	if (guessed) {
-		bgColor = '#ed1123';
+	if (isAnswer) {
+		bgColor = '#02e63e';
 	} else {
 		bgColor = '#83c294';
 	}
@@ -76,11 +76,9 @@
 	style={`bottom: ${y}px; left: ${x}px; height:${h}px; width:${w}px; background-color: ${bgColor}`}
 	use:popup={popupHover}
 />
-{#if guessed}
-	<div class="card variant-filled-secondary z-50 p-2" data-popup={`popupHover${name}`}>
-		<p class="md:text-md whitespace-nowrap text-sm font-bold">{name}</p>
-		<div class="variant-filled-secondary arrow" />
-	</div>
-{/if}
+<div class="card variant-filled-secondary z-50 px-2 py-1" data-popup={`popupHover${name}`}>
+	<p class="md:text-md whitespace-nowrap text-sm font-semibold">{name}</p>
+	<div class="variant-filled-secondary arrow" />
+</div>
 
 <svelte:window bind:innerWidth />

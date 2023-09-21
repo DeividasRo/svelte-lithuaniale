@@ -913,6 +913,17 @@
     "population_proper": "1247"
   },
   {
+    "city": "Simnas",
+    "lat": "54.4000",
+    "lng": "23.6500",
+    "country": "Lithuania",
+    "iso2": "LT",
+    "admin_name": "Alytus",
+    "capital": "",
+    "population": "1198",
+    "population_proper": "1192"
+  },
+  {
     "city": "Salantai",
     "lat": "56.0667",
     "lng": "21.5667",
