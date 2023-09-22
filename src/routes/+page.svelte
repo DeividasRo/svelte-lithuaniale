@@ -47,6 +47,9 @@
 
 		if (currentGuess == $answerStore) {
 			setGameStateStore('won');
+		} else if ($guessesStore.length == 8) {
+			setGameStateStore('lost');
+			setCityGuessStatus($answerStore, true);
 		} else {
 			currentGuess = '';
 		}
@@ -74,7 +77,7 @@
 	</div>
 	{#if $gameStateStore == 'in progress' && browser}
 		<GuessInput bind:inputValue={currentGuess} options={$cityNamesStore} on:input={handleInput} />
-	{:else if $gameStateStore == 'won' && browser}
+	{:else if $gameStateStore === 'won' && browser}
 		<div
 			in:fly={{
 				delay: 0,
@@ -89,6 +92,22 @@
 				Congratulations!<br /> The answer was <span class="font-bold">{$answerStore}</span>!
 			</p>
 		</div>
+	{:else if $gameStateStore === 'lost' && browser}
+		<div
+			in:fly={{
+				delay: 0,
+				duration: 600,
+				x: 100,
+				y: 0,
+				opacity: 0,
+				easing: quintOut
+			}}
+		>
+			<p class="my-6 text-center text-xl md:my-7 md:text-2xl">
+				You ran out of guesses...<br /> The right answer was
+				<span class="font-bold">{$answerStore}</span>!
+			</p>
+		</div>
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
@@ -99,7 +118,7 @@
 					delay: 0,
 					duration: 400,
 					x: 0,
-					y: 35,
+					y: 25,
 					opacity: 0.5,
 					easing: quintOut
 				}}
@@ -118,7 +137,7 @@
 	</ul>
 
 	<button
-		class="variant-filled-secondary btn absolute right-5 my-5 text-lg"
+		class="variant-filled-secondary btn absolute right-4 mt-4 text-lg"
 		on:click={() => {
 			resetGuessesStore();
 			resetCitiesStore();
@@ -127,14 +146,10 @@
 			currentGuess = '';
 		}}>Reset</button
 	>
-
-	<div class="card-footer mt-4" />
 </div>
 
 <!--
 	TODO:
-	- Deployment on Vercel
-	- Max guess count, losing text
 	- Select correct city every day (global timer), remove reset button
 	- Server/Client side modifications, change answer pick to server fetch
 	- Hint system (first letter, population)

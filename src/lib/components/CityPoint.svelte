@@ -3,6 +3,7 @@
 	import { tweened, type Tweened } from 'svelte/motion';
 	import { popup } from '@skeletonlabs/skeleton';
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
+	import { gameStateStore } from '$lib/stores/gameStateStore';
 
 	export let name: string;
 	export let population: number;
@@ -17,8 +18,8 @@
 	let x: number;
 	let yd: number;
 	let xd: number;
-	const h: Tweened<number> = tweened(0.5, { duration: 650, easing: cubicOut });
-	let w: Tweened<number> = tweened(0.5, { duration: 650, easing: cubicOut });
+	const h: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
+	let w: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
 
 	$: if (innerWidth >= 768) {
 		smallScreen = false;
@@ -53,7 +54,8 @@
 
 	let bgColor: string;
 	if (isAnswer) {
-		bgColor = '#02e63e';
+		if ($gameStateStore === 'won') bgColor = '#02e63e';
+		else if ($gameStateStore === 'lost') bgColor = '#eb020a';
 	} else {
 		bgColor = '#83c294';
 	}
