@@ -21,6 +21,7 @@
 	import { gameStateStore, setGameStateStore } from '$lib/stores/gameStateStore';
 
 	let currentGuess: string = '';
+	let maxGuessCount: number = 7;
 
 	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
@@ -47,7 +48,7 @@
 
 		if (currentGuess == $answerStore) {
 			setGameStateStore('won');
-		} else if ($guessesStore.length == 8) {
+		} else if ($guessesStore.length == maxGuessCount) {
 			setGameStateStore('lost');
 			setCityGuessStatus($answerStore, true);
 		} else {
