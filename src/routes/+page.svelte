@@ -22,13 +22,13 @@
 
 	let currentGuess: string = '';
 
-	onMount(() => {
+	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
 		resetCitiesStore();
 		resetAnswerStore($cityNamesStore);
 		setGameStateStore('in progress');
 		currentGuess = '';
-	});
+	}
 
 	function handleInput() {
 		const guessCityData = getCityData(currentGuess);
@@ -55,7 +55,11 @@
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
 	<div class="relative mt-5 md:mt-10">
-		<img class="max-w-xs drop-shadow-md md:max-w-md" src={LTMap} alt="Map of Lithuania" />
+		<img
+			class=" max-w-xs select-none drop-shadow-md md:max-w-md"
+			src={LTMap}
+			alt="Map of Lithuania"
+		/>
 		{#each $citiesStore as city}
 			{#if city.guessed}
 				<CityPoint
@@ -132,6 +136,6 @@
 	- Deployment on Vercel
 	- Max guess count, losing text
 	- Select correct city every day (global timer), remove reset button
-	- Server/Client side modifications, ensure safety of the answer
+	- Server/Client side modifications, change answer pick to server fetch
 	- Hint system (first letter, population)
 -->
