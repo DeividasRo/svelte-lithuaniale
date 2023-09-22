@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import GuessInput from '$lib/components/GuessInput.svelte';
@@ -60,16 +61,27 @@
 			{/if}
 		{/each}
 	</div>
-	{#if $gameStateStore == 'in progress'}
+	{#if $gameStateStore == 'in progress' && browser}
 		<GuessInput bind:inputValue={currentGuess} options={$cityNamesStore} on:input={handleInput} />
-	{:else if $gameStateStore == 'won'}
-		<p class="my-6 text-center text-xl md:my-8 md:text-2xl">
-			Congratulations!<br /> The answer was <span class="font-bold">{$answerStore}</span>!
-		</p>
+	{:else if $gameStateStore == 'won' && browser}
+		<div
+			in:fly={{
+				delay: 0,
+				duration: 600,
+				x: 100,
+				y: 0,
+				opacity: 0,
+				easing: quintOut
+			}}
+		>
+			<p class="my-6 text-center text-xl md:my-8 md:text-2xl">
+				Congratulations!<br /> The answer was <span class="font-bold">{$answerStore}</span>!
+			</p>
+		</div>
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
-	<ul class="list w-7/12 max-w-xs space-y-3">
+	<ul class="list w-72 max-w-md space-y-3 md:w-7/12 md:max-w-xs">
 		{#each $guessesStore as guess}
 			<div
 				in:fly={{
@@ -83,7 +95,7 @@
 				out:fly={{
 					delay: 0,
 					duration: 400,
-					x: 100,
+					x: 30,
 					y: 0,
 					opacity: 0,
 					easing: quintOut
@@ -95,7 +107,7 @@
 	</ul>
 
 	<button
-		class="variant-filled-secondary btn absolute right-10 my-5 text-lg"
+		class="variant-filled-secondary btn absolute right-5 my-5 text-lg"
 		on:click={() => {
 			resetGuessesStore();
 			resetCitiesStore();
@@ -104,11 +116,12 @@
 			currentGuess = '';
 		}}>Reset</button
 	>
+
+	<div class="card-footer mt-4" />
 </div>
 
 <!--
 	TODO:
-	- map points, winning text, winning point animations
 	- Deployment on Vercel
 	- Max guess count, losing text
 	- Select correct city every day (global timer), remove reset button
