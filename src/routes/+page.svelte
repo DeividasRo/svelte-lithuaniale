@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -21,7 +22,13 @@
 
 	let currentGuess: string = '';
 
-	console.log($answerStore);
+	onMount(() => {
+		resetGuessesStore();
+		resetCitiesStore();
+		resetAnswerStore($cityNamesStore);
+		setGameStateStore('in progress');
+		currentGuess = '';
+	});
 
 	function handleInput() {
 		const guessCityData = getCityData(currentGuess);
@@ -125,6 +132,6 @@
 	- Deployment on Vercel
 	- Max guess count, losing text
 	- Select correct city every day (global timer), remove reset button
+	- Server/Client side modifications, ensure safety of the answer
 	- Hint system (first letter, population)
-	- Server/Client side modifications
 -->

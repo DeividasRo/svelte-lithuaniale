@@ -60,7 +60,7 @@
 	</button>
 </div>
 <div
-	class="text-md card z-20 -mt-2 ml-[0.7rem] max-h-32 w-[15.5rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 font-semibold md:ml-[0.6rem] md:max-h-56 md:w-[19rem] md:text-lg"
+	class="text-md card z-20 -mt-2 ml-[0.7rem] max-h-32 w-[15.5rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 py-1 font-semibold md:ml-[0.6rem] md:max-h-56 md:w-[19rem] md:text-lg"
 	tabindex="-1"
 	data-popup="popupAutocomplete"
 >
