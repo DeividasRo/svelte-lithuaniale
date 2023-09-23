@@ -160,11 +160,10 @@
 
 <!--
 	TODO:
-	- Show time until next word
 	- LT and EN version
 	- Help button that pops up a window that contains:
 		explanation of the game
-		time left until next word (replace the old one)
+		time left until next word 
 		amount of wins and losses
 		win lose ratio
 -->
