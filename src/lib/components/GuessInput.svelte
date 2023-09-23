@@ -40,12 +40,12 @@
 </script>
 
 <div
-	class="input-group input-group-divider my-6 h-12 min-h-[3rem] w-80 max-w-sm grid-cols-[85%_15%] drop-shadow-xl md:my-9 md:w-full md:max-w-sm"
+	class="input-group input-group-divider my-5 h-12 min-h-[3rem] w-80 max-w-sm grid-cols-[85%_15%] drop-shadow-xl sm:my-9 sm:w-full sm:max-w-sm"
 >
 	<input
 		type="search"
 		name="autocomplete-search"
-		class="autocomplete search pl-4 text-center text-lg font-semibold outline-none md:text-xl"
+		class="autocomplete search pl-4 text-center text-lg font-semibold outline-none sm:text-xl"
 		placeholder="Enter a city in Lithuania..."
 		bind:value={inputValue}
 		use:popup={popupSettings}
@@ -60,7 +60,7 @@
 	</button>
 </div>
 <div
-	class="text-md card z-20 -mt-2 ml-[0.7rem] max-h-32 w-[15.5rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 py-1 font-semibold md:ml-[0.6rem] md:max-h-56 md:w-[19rem] md:text-lg"
+	class="text-md card z-20 -mt-2 ml-[0.7rem] max-h-32 w-[15.5rem] overflow-y-auto rounded-none rounded-b-lg border-2 border-t-0 border-primary-700 !bg-tertiary-600 py-1 font-semibold sm:ml-[0.6rem] sm:max-h-56 sm:w-[19rem] sm:text-lg"
 	tabindex="-1"
 	data-popup="popupAutocomplete"
 >

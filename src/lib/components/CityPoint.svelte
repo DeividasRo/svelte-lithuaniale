@@ -72,13 +72,13 @@
 
 <div
 	tabindex="-1"
-	class="absolute rounded-full border border-[#0b491c] md:border-2 [&>*]:pointer-events-none"
+	class="absolute rounded-full border border-[#0b491c] sm:border-2 [&>*]:pointer-events-none"
 	style={`bottom: ${y}px; left: ${x}px; height:${$h}px; width:${$w}px; background-color: ${bgColor}`}
 	use:popup={popupHover}
 />
 
 <div class="card variant-filled-secondary z-50 px-2 py-1" data-popup={`popupHover${name}`}>
-	<p class="md:text-md whitespace-nowrap text-sm font-semibold">{name}</p>
+	<p class="sm:text-md whitespace-nowrap text-sm font-semibold">{name}</p>
 	<div class="variant-filled-secondary arrow" />
 </div>
 

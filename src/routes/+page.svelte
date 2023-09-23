@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -17,18 +16,27 @@
 		removeCityStoreName,
 		resetCitiesStore
 	} from '$lib/stores/cities-store';
-	import { answerStore, resetAnswerStore } from '$lib/stores/answerStore';
+	import { answerStore, setAnswerStore } from '$lib/stores/answerStore';
 	import { gameStateStore, setGameStateStore } from '$lib/stores/gameStateStore';
+	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
+	import { getTheCityIndexForToday, isStateUpdateRequired } from './page';
 
 	let currentGuess: string = '';
 	let maxGuessCount: number = 7;
 
+	if (
+		$gameStateStore != 'starting' &&
+		isStateUpdateRequired(new Date($savedDateStore), $startDateStore)
+	) {
+		setGameStateStore('starting');
+		updateSavedDateStore();
+	}
+
 	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
 		resetCitiesStore();
-		resetAnswerStore($cityNamesStore);
+		setAnswerStore($cityNamesStore, getTheCityIndexForToday($startDateStore, $cityNamesStore));
 		setGameStateStore('in progress');
-		currentGuess = '';
 	}
 
 	function handleInput() {
@@ -58,9 +66,9 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start">
-	<div class="relative mt-5 md:mt-10">
+	<div class="relative mt-5 sm:mt-10">
 		<img
-			class=" max-w-xs select-none drop-shadow-md md:max-w-md"
+			class=" max-w-xs select-none drop-shadow-md sm:max-w-md"
 			src={LTMap}
 			alt="Map of Lithuania"
 		/>
@@ -83,13 +91,13 @@
 			in:fly={{
 				delay: 0,
 				duration: 600,
-				x: 100,
+				x: 40,
 				y: 0,
 				opacity: 0,
 				easing: quintOut
 			}}
 		>
-			<p class="my-6 text-center text-xl md:my-8 md:text-2xl">
+			<p class=" my-5 h-12 text-center text-xl sm:my-8 sm:text-2xl">
 				Congratulations!<br /> The answer was <span class="font-bold">{$answerStore}</span>!
 			</p>
 		</div>
@@ -98,13 +106,13 @@
 			in:fly={{
 				delay: 0,
 				duration: 600,
-				x: 100,
+				x: 40,
 				y: 0,
 				opacity: 0,
 				easing: quintOut
 			}}
 		>
-			<p class="my-6 text-center text-xl md:my-7 md:text-2xl">
+			<p class="my-5 h-12 text-center text-xl sm:my-9 sm:text-2xl">
 				You ran out of guesses...<br /> The right answer was
 				<span class="font-bold">{$answerStore}</span>!
 			</p>
@@ -112,14 +120,14 @@
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
-	<ul class="list w-72 max-w-md space-y-3 md:w-7/12 md:max-w-xs">
+	<ul class="list w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
 		{#each $guessesStore as guess}
 			<div
 				in:fly={{
 					delay: 0,
 					duration: 400,
 					x: 0,
-					y: 25,
+					y: 20,
 					opacity: 0.5,
 					easing: quintOut
 				}}
@@ -136,22 +144,26 @@
 			</div>
 		{/each}
 	</ul>
-
+	<!--
 	<button
 		class="variant-filled-secondary btn absolute right-4 mt-4 text-lg"
 		on:click={() => {
 			resetGuessesStore();
 			resetCitiesStore();
-			resetAnswerStore($cityNamesStore);
+			setAnswerStore($cityNamesStore);
 			setGameStateStore('in progress');
 			currentGuess = '';
 		}}>Reset</button
 	>
+	-->
 </div>
 
 <!--
 	TODO:
-	- Select correct city every day (global timer), remove reset button
-	- Server/Client side modifications, change answer pick to server fetch
-	- Hint system (first letter, population)
+	- Show time until next word
+	- LT and EN version
+	- Help button that pops up a window that contains:
+		time left until next word
+		amount of wins and losses
+		win lose ratio
 -->
