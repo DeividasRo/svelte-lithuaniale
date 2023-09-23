@@ -1,3 +1,4 @@
+
 export const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
     let savedIndex = Math.floor(
         Math.abs((savedDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))
