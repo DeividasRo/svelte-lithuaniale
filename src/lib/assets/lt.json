@@ -715,15 +715,15 @@
     "population_proper": "3094"
   },
   {
-    "city": "Akademija",
-    "lat": "54.8944",
-    "lng": "23.8361",
+    "city": "Vilkija",
+    "lat": "55.0398",
+    "lng": "23.5832",
     "country": "Lithuania",
     "iso2": "LT",
     "admin_name": "Kaunas",
     "capital": "",
-    "population": "2807",
-    "population_proper": "2807"
+    "population": "1738",
+    "population_proper": "1738"
   },
   {
     "city": "Ariogala",
@@ -748,15 +748,15 @@
     "population_proper": "2631"
   },
   {
-    "city": "Nemėžis",
-    "lat": "54.6361",
-    "lng": "25.3611",
+    "city": "Nemenčinė",
+    "lat": "54.8493",
+    "lng": "25.4685",
     "country": "Lithuania",
     "iso2": "LT",
     "admin_name": "Vilnius",
     "capital": "",
-    "population": "2498",
-    "population_proper": "2498"
+    "population": "4560",
+    "population_proper": "4560"
   },
   {
     "city": "Nida",
