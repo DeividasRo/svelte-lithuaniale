@@ -8,6 +8,7 @@
 
 	export let inputValue: string;
 	export let options: string[];
+	export let placeholderText: string;
 	let flavorOptions: AutocompleteOption[] = [];
 
 	$: options, refillFlavorOptions();
@@ -46,7 +47,7 @@
 		type="search"
 		name="autocomplete-search"
 		class="autocomplete search pl-4 text-center text-lg font-semibold outline-none sm:text-xl"
-		placeholder="Enter a city in Lithuania..."
+		placeholder={placeholderText}
 		bind:value={inputValue}
 		use:popup={popupSettings}
 	/>

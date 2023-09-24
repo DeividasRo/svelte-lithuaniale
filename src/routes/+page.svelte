@@ -2,9 +2,11 @@
 	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import { getTheCityIndexForToday, isStateUpdateRequired } from './page';
 	import GuessInput from '$lib/components/GuessInput.svelte';
 	import GuessCard from '$lib/components/GuessCard.svelte';
 	import CityPoint from '$lib/components/CityPoint.svelte';
+	import LanguageSelectButton from '$lib/components/LanguageSelectButton.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { calcDistance } from '$lib/utility';
 	import { resetGuessesStore, addToGuessesStore, guessesStore } from '$lib/stores/guesses-store';
@@ -19,7 +21,8 @@
 	import { answerStore, setAnswerStore } from '$lib/stores/answerStore';
 	import { gameStateStore, setGameStateStore } from '$lib/stores/gameStateStore';
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
-	import { getTheCityIndexForToday, isStateUpdateRequired } from './page';
+	import { languageStore } from '$lib/stores/languageStore';
+	import languagesJson from '$lib/assets/languages.json';
 
 	let currentGuess: string = '';
 	let maxGuessCount: number = 7;
@@ -85,12 +88,17 @@
 		{/each}
 	</div>
 	{#if $gameStateStore == 'in progress' && browser}
-		<GuessInput bind:inputValue={currentGuess} options={$cityNamesStore} on:input={handleInput} />
+		<GuessInput
+			bind:inputValue={currentGuess}
+			placeholderText={languagesJson[$languageStore]['input-placeholder']}
+			options={$cityNamesStore}
+			on:input={handleInput}
+		/>
 	{:else if $gameStateStore === 'won' && browser}
 		<div
 			in:fly={{
 				delay: 0,
-				duration: 600,
+				duration: 900,
 				x: 40,
 				y: 0,
 				opacity: 0,
@@ -98,14 +106,16 @@
 			}}
 		>
 			<p class=" my-5 h-12 text-center text-xl sm:my-8 sm:text-2xl">
-				Congratulations!<br /> The answer was <span class="font-bold">{$answerStore}</span>!
+				{@html languagesJson[$languageStore]['won-message']}<span class="font-bold"
+					>{$answerStore}</span
+				>!
 			</p>
 		</div>
 	{:else if $gameStateStore === 'lost' && browser}
 		<div
 			in:fly={{
 				delay: 0,
-				duration: 600,
+				duration: 900,
 				x: 40,
 				y: 0,
 				opacity: 0,
@@ -113,7 +123,7 @@
 			}}
 		>
 			<p class="my-5 h-12 text-center text-xl sm:my-9 sm:text-2xl">
-				You ran out of guesses...<br /> The right answer was
+				{@html languagesJson[$languageStore]['lost-message']}
 				<span class="font-bold">{$answerStore}</span>!
 			</p>
 		</div>
@@ -144,6 +154,8 @@
 			</div>
 		{/each}
 	</ul>
+
+	<LanguageSelectButton />
 	<!--
 	<button
 		class="variant-filled-secondary btn absolute right-4 mt-4 text-lg"
@@ -160,10 +172,9 @@
 
 <!--
 	TODO:
-	- LT and EN version
-	- Help button that pops up a window that contains:
+	- Help button that pops up a window containing:
 		explanation of the game
 		time left until next word 
-		amount of wins and losses
-		win lose ratio
+		winrate
+		amount of wins per guess amount
 -->

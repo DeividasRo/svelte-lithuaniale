@@ -21,7 +21,7 @@
 	const h: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
 	let w: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
 
-	$: if (innerWidth >= 768) {
+	$: if (innerWidth >= 640) {
 		smallScreen = false;
 		calcSizes();
 	} else {
