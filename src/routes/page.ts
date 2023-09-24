@@ -6,7 +6,8 @@ export const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
     let currentIndex = Math.floor(
         Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
     );
-    return savedIndex != currentIndex;
+    console.log(savedIndex, currentIndex);
+    return savedIndex !== currentIndex;
 };
 
 export const getTheCityIndexForToday = (startDate: Date, options: string[]) => {

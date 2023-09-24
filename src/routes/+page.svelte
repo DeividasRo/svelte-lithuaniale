@@ -27,18 +27,20 @@
 	let currentGuess: string = '';
 	let maxGuessCount: number = 7;
 
+	console.log($savedDateStore);
+
 	if (
 		$gameStateStore != 'starting' &&
 		isStateUpdateRequired(new Date($savedDateStore), $startDateStore)
 	) {
 		setGameStateStore('starting');
-		updateSavedDateStore();
 	}
 
 	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
 		resetCitiesStore();
 		setAnswerStore($cityNamesStore, getTheCityIndexForToday($startDateStore, $cityNamesStore));
+		updateSavedDateStore();
 		setGameStateStore('in progress');
 	}
 
