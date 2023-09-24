@@ -6,7 +6,6 @@ export const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
     let currentIndex = Math.floor(
         Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
     );
-    console.log(savedIndex, currentIndex);
     return savedIndex !== currentIndex;
 };
 

@@ -6,7 +6,7 @@
     },
     "united-kingdom": {
         "won-message": "Congratulations!<br />The answer was ",
-        "lost-message": "You ran out of guesses...<br />The right answer was ",
-        "input-placeholder": "Enter a city in Lithuania..."
+        "lost-message": "You ran out of guesses...<br />The answer was ",
+        "input-placeholder": "Enter a name of a city..."
     }
 }

@@ -27,8 +27,6 @@
 	let currentGuess: string = '';
 	let maxGuessCount: number = 7;
 
-	console.log($savedDateStore);
-
 	if (
 		$gameStateStore != 'starting' &&
 		isStateUpdateRequired(new Date($savedDateStore), $startDateStore)
