@@ -98,8 +98,8 @@
 		<div
 			in:fly={{
 				delay: 0,
-				duration: 900,
-				x: 40,
+				duration: 1000,
+				x: 30,
 				y: 0,
 				opacity: 0,
 				easing: quintOut
@@ -115,8 +115,8 @@
 		<div
 			in:fly={{
 				delay: 0,
-				duration: 900,
-				x: 40,
+				duration: 1000,
+				x: 30,
 				y: 0,
 				opacity: 0,
 				easing: quintOut
