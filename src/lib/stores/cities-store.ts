@@ -40,6 +40,6 @@ export const resetCitiesStore = () => {
     const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
     const cityNames: string[] = cities.map((city) => city.city)
 
-    cityNamesStore.set(cityNames.sort());
+    cityNamesStore.set(cityNames.sort((a, b) => a.localeCompare(b, 'lt')));
     citiesStore.set(cities);
 }
