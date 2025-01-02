@@ -3,7 +3,7 @@
 	import { tweened, type Tweened } from 'svelte/motion';
 	import { popup } from '@skeletonlabs/skeleton';
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
-	import { gameStateStore } from '$lib/stores/gameStateStore';
+	import { gameStateStore } from '$lib/stores/mapGameStateStore';
 
 	export let name: string;
 	export let population: number;

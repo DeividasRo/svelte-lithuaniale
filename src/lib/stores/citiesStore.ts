@@ -7,7 +7,7 @@ export const citiesStore: Writable<City[]> = localStorageStore('citiesStore', []
 export const cityNamesStore: Writable<string[]> = localStorageStore('cityNamesStore', [])
 
 export const getCityData = (cityName: string) => {
-    let cities = get(citiesStore);
+    const cities = get(citiesStore);
     const cityPosition = cities.findIndex((city) => {
         return city.city.toLowerCase() == cityName.toLowerCase();
     });
@@ -15,7 +15,7 @@ export const getCityData = (cityName: string) => {
 }
 
 export const setCityGuessStatus = (cityName: string, status: boolean) => {
-    let cities = get(citiesStore);
+    const cities = get(citiesStore);
     const cityPosition = cities.findIndex((city) => {
         return city.city.toLowerCase() == cityName.toLowerCase();
     });
@@ -26,7 +26,7 @@ export const setCityGuessStatus = (cityName: string, status: boolean) => {
 }
 
 export const removeCityStoreName = (cityNameToDelete: string) => {
-    let cities = get(cityNamesStore);
+    const cities = get(cityNamesStore);
     const cityPosition = cities.findIndex((cityName) => {
         return cityName.toLowerCase() == cityNameToDelete.toLowerCase();
     });
@@ -37,6 +37,7 @@ export const removeCityStoreName = (cityNameToDelete: string) => {
 }
 
 export const resetCitiesStore = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const cities: City[] = citiesJson.map(({ country, iso2, admin_name, capital, population_proper, ...keepAttrs }) => ({ ...keepAttrs, guessed: false }))
     const cityNames: string[] = cities.map((city) => city.city)
 

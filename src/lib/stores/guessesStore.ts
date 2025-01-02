@@ -5,7 +5,7 @@ import type { Writable } from 'svelte/store';
 export const guessesStore: Writable<Guess[]> = localStorageStore('guessesStore', [])
 
 export const addToGuessesStore = (name: string, distance: number) => {
-    let items = get(guessesStore);
+    const items = get(guessesStore);
 
     guessesStore.update(() => {
         return [...items, { name: name, distance: distance }];

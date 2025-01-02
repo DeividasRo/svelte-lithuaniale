@@ -1,5 +1,4 @@
 import { localStorageStore } from '@skeletonlabs/skeleton';
-import { get } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 
 type Language = 'lithuania' | 'united-kingdom'
