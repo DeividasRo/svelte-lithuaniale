@@ -84,7 +84,7 @@
 <div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
 	<div class="relative mt-5 sm:mt-10">
 		<img
-			class="max-w-xs select-none drop-shadow-md sm:max-w-md"
+			class="pointer-events-none max-w-xs select-none drop-shadow-md sm:max-w-md"
 			src={LTMap}
 			alt="Map of Lithuania"
 		/>

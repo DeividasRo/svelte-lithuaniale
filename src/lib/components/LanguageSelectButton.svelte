@@ -5,15 +5,15 @@
 	let innerWidth: number;
 	let iconWidth = 80;
 
-	$: if (innerWidth >= 640) {
-		iconWidth = 80;
+	$: if (innerWidth < 640) {
+		iconWidth = 52;
 	} else {
-		iconWidth = 64;
+		iconWidth = 80;
 	}
 </script>
 
 <button
-	class="absolute right-4 top-1 drop-shadow-md hover:scale-110 active:scale-90 sm:right-5 sm:top-2"
+	class="md:w-80px absolute right-4 top-1 drop-shadow-md hover:scale-110 active:scale-90 sm:right-5 sm:top-2"
 	style="-webkit-tap-highlight-color: transparent;"
 	on:click={() => {
 		if ($languageStore == 'lithuania') {
