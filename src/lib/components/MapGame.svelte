@@ -5,7 +5,6 @@
 	import GuessInput from '$lib/components/GuessInput.svelte';
 	import GuessCard from '$lib/components/GuessCard.svelte';
 	import CityPoint from '$lib/components/CityPoint.svelte';
-	import LanguageSelectButton from '$lib/components/LanguageSelectButton.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { calcDistance } from '$lib/utility';
 	import { resetGuessesStore, addToGuessesStore, guessesStore } from '$lib/stores/guessesStore';
@@ -82,7 +81,7 @@
 	}
 </script>
 
-<div class="container mx-auto flex h-full flex-col items-center justify-start">
+<div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
 	<div class="relative mt-5 sm:mt-10">
 		<img
 			class="max-w-xs select-none drop-shadow-md sm:max-w-md"
@@ -144,7 +143,7 @@
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
-	<ul class="list w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
+	<ul class="list mb-4 w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
 		{#each $guessesStore as guess}
 			<div
 				in:fly={{
@@ -155,21 +154,12 @@
 					opacity: 0.5,
 					easing: quintOut
 				}}
-				out:fly={{
-					delay: 0,
-					duration: 400,
-					x: 30,
-					y: 0,
-					opacity: 0,
-					easing: quintOut
-				}}
 			>
 				<GuessCard {guess} />
 			</div>
 		{/each}
 	</ul>
 
-	<LanguageSelectButton />
 	<!--
 	<button
 		class="variant-filled-secondary btn absolute right-4 mt-4 text-lg"

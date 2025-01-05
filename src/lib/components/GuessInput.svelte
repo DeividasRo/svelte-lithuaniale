@@ -41,7 +41,7 @@
 </script>
 
 <div
-	class="input-group input-group-divider my-5 h-12 min-h-[3rem] w-80 max-w-sm grid-cols-[85%_15%] drop-shadow-xl sm:my-9 sm:w-full sm:max-w-sm"
+	class="input-group input-group-divider my-6 h-12 min-h-[3rem] w-80 max-w-sm grid-cols-[85%_15%] drop-shadow-xl sm:my-9 sm:w-full sm:max-w-sm"
 >
 	<input
 		type="search"

@@ -3,12 +3,12 @@
 	import { languageStore, setLanguageStore } from '$lib/stores/languageStore';
 
 	let innerWidth: number;
-	let iconWidth = 52;
+	let iconWidth = 80;
 
 	$: if (innerWidth >= 640) {
-		iconWidth = 72;
+		iconWidth = 80;
 	} else {
-		iconWidth = 56;
+		iconWidth = 72;
 	}
 </script>
 
