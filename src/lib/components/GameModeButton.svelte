@@ -14,9 +14,10 @@
 </script>
 
 <button
-	class="cursor-pointer rounded-full border-4 p-2 text-lg {currentGame === mode
+	class="cursor-pointer rounded-full border-4 p-2 text-lg drop-shadow-md {currentGame === mode
 		? 'border-green-400 bg-green-700 text-white'
 		: 'border-gray-300 bg-green-800 text-gray-300 hover:border-white hover:text-white'}"
+	style="-webkit-tap-highlight-color: transparent;"
 	on:click={handleClick}
 	tabindex="0"
 	on:keydown={(e) => e.key === 'Enter' && handleClick()}

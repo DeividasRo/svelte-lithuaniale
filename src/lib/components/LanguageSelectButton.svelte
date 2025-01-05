@@ -8,7 +8,7 @@
 	$: if (innerWidth >= 640) {
 		iconWidth = 80;
 	} else {
-		iconWidth = 72;
+		iconWidth = 64;
 	}
 </script>
 
