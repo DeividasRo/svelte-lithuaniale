@@ -2,12 +2,12 @@
 	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import GuessInput from '$lib/components/GuessInput.svelte';
-	import GuessCard from '$lib/components/GuessCard.svelte';
-	import CityPoint from '$lib/components/CityPoint.svelte';
+	import GuessInput from '$lib/components/Map/GuessInput.svelte';
+	import GuessCard from '$lib/components/Map/GuessCard.svelte';
+	import CityPoint from '$lib/components/Map/CityPoint.svelte';
 	import LTMap from '$lib/assets/lt.svg';
 	import { calcDistance } from '$lib/utility';
-	import { resetGuessesStore, addToGuessesStore, guessesStore } from '$lib/stores/guessesStore';
+	import { resetGuessesStore, addToGuessesStore, guessesStore } from '$lib/stores/map/guessesStore';
 	import {
 		citiesStore,
 		cityNamesStore,
@@ -16,8 +16,8 @@
 		removeCityStoreName,
 		resetCitiesStore
 	} from '$lib/stores/citiesStore';
-	import { answerStore, setAnswerStore } from '$lib/stores/answerStore';
-	import { gameStateStore, setGameStateStore } from '$lib/stores/mapGameStateStore';
+	import { answerStore, setAnswerStore } from '$lib/stores/map/answerStore';
+	import { gameStateStore, setGameStateStore } from '$lib/stores/map/gameStateStore';
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';

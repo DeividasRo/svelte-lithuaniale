@@ -3,7 +3,7 @@
 	import { tweened, type Tweened } from 'svelte/motion';
 	import { popup } from '@skeletonlabs/skeleton';
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
-	import { gameStateStore } from '$lib/stores/mapGameStateStore';
+	import { gameStateStore } from '$lib/stores/map/gameStateStore';
 
 	export let name: string;
 	export let population: number;
@@ -18,8 +18,8 @@
 	let x: number;
 	let yd: number;
 	let xd: number;
-	const h: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
-	let w: Tweened<number> = tweened(1, { duration: 920, easing: cubicOut });
+	const h: Tweened<number> = tweened(1, { duration: 1000, easing: cubicOut });
+	let w: Tweened<number> = tweened(1, { duration: 1000, easing: cubicOut });
 
 	$: if (innerWidth >= 640) {
 		smallScreen = false;

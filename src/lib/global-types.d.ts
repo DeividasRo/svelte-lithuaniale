@@ -1,6 +1,11 @@
-declare interface Guess {
+declare interface MapGuess {
     name: string;
     distance: number;
+}
+
+declare interface HistoryGuess {
+    year: number;
+    difference: number;
 }
 
 

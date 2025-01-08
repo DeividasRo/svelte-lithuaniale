@@ -1,9 +1,10 @@
 <script lang="ts">
-	import MapGame from '$lib/components/MapGame.svelte';
+	import MapGame from '$lib/components/Map/Game.svelte';
 	import LanguageSelectButton from '$lib/components/LanguageSelectButton.svelte';
 	import GameModeButton from '$lib/components/GameModeButton.svelte';
 	import { gameModeStore } from '$lib/stores/gameModeStore';
 	import { get } from 'svelte/store';
+	import HistoryGame from '$lib/components/History/Game.svelte';
 
 	let currentGame = get(gameModeStore);
 
@@ -22,7 +23,7 @@
 	{#if currentGame == 1}
 		<MapGame />
 	{:else if currentGame == 2}
-		<div class="h2 mt-24 font-bold caret-transparent">Coming soon</div>
+		<HistoryGame />
 	{/if}
 	<LanguageSelectButton />
 </div>

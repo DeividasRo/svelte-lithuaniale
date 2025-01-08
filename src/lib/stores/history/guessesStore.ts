@@ -2,13 +2,13 @@ import { localStorageStore } from '@skeletonlabs/skeleton';
 import { get } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 
-export const guessesStore: Writable<Guess[]> = localStorageStore('guessesStore', [])
+export const guessesStore: Writable<HistoryGuess[]> = localStorageStore('historyGuessesStore', [])
 
-export const addToGuessesStore = (name: string, distance: number) => {
+export const addToGuessesStore = (year: number, difference: number) => {
     const items = get(guessesStore);
 
     guessesStore.update(() => {
-        return [...items, { name: name, distance: distance }];
+        return [...items, { year: year, difference: difference }];
     });
 }
 

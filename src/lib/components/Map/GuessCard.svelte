@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let guess: Guess;
+	export let guess: MapGuess;
 </script>
 
 <section class="card card-hover flex w-full select-none justify-between px-4 py-2">

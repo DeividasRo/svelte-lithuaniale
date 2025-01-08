@@ -1,7 +1,7 @@
 import { localStorageStore } from '@skeletonlabs/skeleton';
 import type { Writable } from 'svelte/store';
 
-export const answerStore: Writable<string> = localStorageStore('answerStore', 'Kaunas')
+export const answerStore: Writable<string> = localStorageStore('historyAnswerStore', '1990')
 
 export const setAnswerStore = (options: string[], index: number) => {
     const shuffledOptions = shuffle(options, 9328);
