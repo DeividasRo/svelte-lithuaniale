@@ -25,20 +25,20 @@
 		}
 		if (Number(target.value) < 1) {
 			target.value = '1';
-			inputValue = '1';
+			inputValue = '';
 		}
 	}
 </script>
 
 <div
-	class="input-group input-group-divider my-6 h-12 min-h-[3rem] w-40 max-w-sm grid-cols-[70%_30%] drop-shadow-xl sm:my-9"
+	class="h-15 input-group input-group-divider my-9 min-h-[3rem] w-52 max-w-sm grid-cols-[75%_25%] drop-shadow-xl"
 >
 	<input
 		type="number"
 		name="input"
 		min="1"
 		max="2025"
-		class="no-arrows pl-10 text-left text-lg font-semibold outline-none sm:text-xl"
+		class="no-arrows pl-16 text-left text-2xl font-semibold outline-none"
 		placeholder={placeholderText}
 		bind:value={inputValue}
 		on:input={handleInput}
