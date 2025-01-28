@@ -83,7 +83,7 @@
 		>
 			<p class=" my-5 h-12 text-center text-xl sm:my-8 sm:text-2xl">
 				{@html languagesJson[$languageStore]['won-message']}<span class="font-bold"
-					>{$answerStore}m.
+					>{$answerStore} m.
 				</span>
 			</p>
 		</div>
@@ -100,13 +100,13 @@
 		>
 			<p class="my-5 h-12 text-center text-xl sm:my-9 sm:text-2xl">
 				{@html languagesJson[$languageStore]['lost-message']}
-				<span class="font-bold">{$answerStore}m.</span>
+				<span class="font-bold">{$answerStore} m.</span>
 			</p>
 		</div>
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
-	<ul class="list mb-4 w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
+	<ul class="list mx-auto mb-4 w-60 max-w-md space-y-3">
 		{#each $guessesStore as guess}
 			<div
 				in:fly={{
