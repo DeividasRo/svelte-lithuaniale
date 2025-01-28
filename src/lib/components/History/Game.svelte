@@ -13,6 +13,7 @@
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';
+	import GuessInput from '../History/GuessInput.svelte';
 
 	let currentGuess: number = 0;
 	let maxGuessCount: number = 7;
@@ -45,8 +46,7 @@
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
 	{#if $gameStateStore == 'in progress' && browser}
-		<!-- Short input field with values from 1 to 2025 (maybe add skeleton UI range slider later)-->
-		<input />
+		<GuessInput bind:inputValue={currentGuess} placeholderText="2025" on:input={handleInput} />
 	{:else if $gameStateStore === 'won' && browser}
 		<div
 			in:fly={{
