@@ -15,7 +15,7 @@
 		setCityGuessStatus,
 		removeCityStoreName,
 		resetCitiesStore
-	} from '$lib/stores/citiesStore';
+	} from '$lib/stores/map/citiesStore';
 	import { answerStore, setAnswerStore } from '$lib/stores/map/answerStore';
 	import { gameStateStore, setGameStateStore } from '$lib/stores/map/gameStateStore';
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
@@ -25,6 +25,11 @@
 	let currentGuess: string = '';
 	let maxGuessCount: number = 7;
 
+	const getCityIndexForToday = (startDate: Date, options: string[]) => {
+		const timeDiff = new Date().getTime() - startDate.getTime();
+		return Math.floor(Math.abs(timeDiff / (1000 * 3600 * 24))) % options.length;
+	};
+
 	const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
 		const savedIndex = Math.floor(
 			Math.abs((savedDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))
@@ -33,11 +38,6 @@
 			Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
 		);
 		return savedIndex !== currentIndex;
-	};
-
-	const getTheCityIndexForToday = (startDate: Date, options: string[]) => {
-		const timeDiff = new Date().getTime() - startDate.getTime();
-		return Math.floor(Math.abs(timeDiff / (1000 * 3600 * 24))) % options.length;
 	};
 
 	if (
@@ -50,7 +50,7 @@
 	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
 		resetCitiesStore();
-		setAnswerStore($cityNamesStore, getTheCityIndexForToday($startDateStore, $cityNamesStore));
+		setAnswerStore($cityNamesStore, getCityIndexForToday($startDateStore, $cityNamesStore));
 		updateSavedDateStore();
 		setGameStateStore('in progress');
 	}

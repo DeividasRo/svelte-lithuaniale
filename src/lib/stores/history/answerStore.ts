@@ -5,6 +5,7 @@ export const answerStore: Writable<number> = localStorageStore('historyAnswerSto
 
 export const setAnswerStore = (options: number[], index: number) => {
     const shuffledOptions = shuffle(options, 9328);
+    console.log(options);
     answerStore.set(shuffledOptions[index]);
 }
 
