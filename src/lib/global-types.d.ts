@@ -16,3 +16,8 @@ declare interface City {
     population: string;
     guessed: boolean;
 }
+
+declare interface HistoryEvent {
+    year: number;
+    event: string;
+}
