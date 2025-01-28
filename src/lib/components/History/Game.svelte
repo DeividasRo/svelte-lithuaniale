@@ -46,7 +46,10 @@
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
 	{#if $gameStateStore == 'in progress' && browser}
+		<div class="h2 my-10 font-bold">Coming soon!</div>
+		<!---
 		<GuessInput bind:inputValue={currentGuess} placeholderText="2025" on:input={handleInput} />
+		-->
 	{:else if $gameStateStore === 'won' && browser}
 		<div
 			in:fly={{
