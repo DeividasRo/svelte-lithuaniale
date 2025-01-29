@@ -65,7 +65,7 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
-	<div class="card h3 mb-2 mt-10 max-w-lg p-4 text-center font-bold drop-shadow-md">
+	<div class="card h3 mb-5 mt-10 max-w-lg p-4 text-center font-bold drop-shadow-md">
 		{#if $languageStore == 'lithuania'}
 			{getEventData($answerStore).event_lt}
 		{:else if $languageStore == 'united-kingdom'}
@@ -85,7 +85,7 @@
 				easing: quintOut
 			}}
 		>
-			<p class="my-8 h-12 text-center text-xl sm:text-2xl">
+			<p class="my-4 h-12 text-center text-xl sm:my-8 sm:text-2xl">
 				{@html languagesJson[$languageStore]['won-message']}<span class="font-bold"
 					>{$answerStore} {@html languagesJson[$languageStore]['year-short']}
 				</span>
@@ -102,7 +102,7 @@
 				easing: quintOut
 			}}
 		>
-			<p class="my-8 h-12 text-center text-xl sm:text-2xl">
+			<p class="my-4 h-12 text-center text-xl sm:my-8 sm:text-2xl">
 				{@html languagesJson[$languageStore]['lost-message']}
 				<span class="font-bold"
 					>{$answerStore} {@html languagesJson[$languageStore]['year-short']}</span
