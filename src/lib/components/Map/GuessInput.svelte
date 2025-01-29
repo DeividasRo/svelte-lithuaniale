@@ -31,11 +31,29 @@
 
 	function onFlavorSelection(event: CustomEvent<AutocompleteOption>): void {
 		inputValue = event.detail.label;
+		const inputElement = document.querySelector(
+			'input[name="autocomplete-search"]'
+		) as HTMLInputElement;
+		if (inputElement) {
+			inputElement.focus();
+		}
 	}
 
 	function onInput() {
 		if (options.includes(inputValue)) {
 			dispatch('input');
+		}
+	}
+
+	function handleKeyPress(event: KeyboardEvent) {
+		if (event.key === 'Enter') {
+			onInput();
+			const inputElement = document.querySelector(
+				'input[name="autocomplete-search"]'
+			) as HTMLInputElement;
+			if (inputElement) {
+				inputElement.blur();
+			}
 		}
 	}
 </script>
@@ -47,9 +65,11 @@
 		type="search"
 		name="autocomplete-search"
 		class="autocomplete search pl-4 text-center text-lg font-semibold outline-none sm:text-xl"
+		spellcheck="false"
 		placeholder={placeholderText}
 		bind:value={inputValue}
 		use:popup={popupSettings}
+		on:keypress={handleKeyPress}
 	/>
 	<button
 		class="variant-filled-secondary !pl-3 !pr-2 outline-none active:opacity-80"
