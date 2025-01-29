@@ -65,7 +65,7 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-start caret-transparent">
-	<div class="card h3 mb-6 mt-10 max-w-lg p-4 text-center font-bold drop-shadow-md sm:mb-10">
+	<div class="card h3 mb-5 mt-10 max-w-lg p-3 text-center font-bold drop-shadow-md sm:mb-10">
 		{#if $languageStore == 'lithuania'}
 			{getEventData($answerStore).event_lt}
 		{:else if $languageStore == 'united-kingdom'}

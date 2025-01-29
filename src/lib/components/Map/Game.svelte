@@ -143,7 +143,7 @@
 	{/if}
 
 	<!-- Dynamically increasing list of guesses below the input field -->
-	<ul class="list mb-4 w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
+	<ul class="list mb-2 w-72 max-w-md space-y-3 sm:w-7/12 sm:max-w-xs">
 		{#each $guessesStore as guess}
 			<div
 				in:fly={{
