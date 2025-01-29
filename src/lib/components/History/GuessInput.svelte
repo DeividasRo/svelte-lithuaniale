@@ -33,7 +33,7 @@
 </script>
 
 <div
-	class="h-15 input-group input-group-divider mt-1 min-h-[3rem] w-52 max-w-sm grid-cols-[75%_25%] drop-shadow-xl sm:mt-0"
+	class="h-15 input-group input-group-divider my-5 min-h-[3rem] w-52 max-w-sm grid-cols-[75%_25%] drop-shadow-xl sm:my-8"
 >
 	<input
 		type="number"
