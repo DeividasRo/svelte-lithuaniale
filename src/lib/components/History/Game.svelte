@@ -85,7 +85,7 @@
 				easing: quintOut
 			}}
 		>
-			<p class="h-12 text-center text-xl sm:text-2xl">
+			<p class="mb-6 mt-4 h-12 text-center text-xl sm:mb-10 sm:mt-5 sm:text-2xl">
 				{@html languagesJson[$languageStore]['won-message']}<span class="font-bold"
 					>{$answerStore} {@html languagesJson[$languageStore]['year-short']}
 				</span>
