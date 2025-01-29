@@ -20,4 +20,5 @@ declare interface City {
 declare interface HistoryEvent {
     year: number;
     event: string;
+    event_lt: string;
 }

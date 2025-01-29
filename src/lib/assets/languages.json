@@ -2,11 +2,13 @@
     "lithuania": {
         "won-message": "Sveikinimai!<br />Dienos atsakymas buvo ",
         "lost-message": "Išnaudojai visus spėjimus...<br />Dienos atsakymas buvo ",
-        "input-placeholder": "Įveskite miesto pavadinimą..."
+        "input-placeholder": "Įveskite miesto pavadinimą...",
+        "year-short": "m."
     },
     "united-kingdom": {
         "won-message": "Congratulations!<br />Today's answer was ",
         "lost-message": "You ran out of guesses...<br />Today's answer was ",
-        "input-placeholder": "Enter a name of a city..."
+        "input-placeholder": "Enter a name of a city...",
+        "year-short": ""
     }
 }
