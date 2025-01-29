@@ -21,8 +21,8 @@
     },
     {
         "year": 1413,
-        "event": "The Union of Horodło reaffirmed the Polish-Lithuanian alliance, granting Lithuanian nobles rights equal to Polish nobility.",
-        "event_lt": "Horodlės unija dar kartą patvirtino Lenkijos ir Lietuvos sąjungą, suteikdama Lietuvos bajorams teises, prilygstančias Lenkijos bajorams."
+        "event": "This year, the Union of Horodło reaffirmed the Polish-Lithuanian alliance, granting Lithuanian nobles rights equal to Polish nobility.",
+        "event_lt": "Šiais metais Horodlės unija dar kartą patvirtino Lenkijos ir Lietuvos sąjungą, suteikdama Lietuvos bajorams teises, prilygstančias Lenkijos bajorams."
     },
     {
         "year": 1569,
@@ -31,8 +31,8 @@
     },
     {
         "year": 1655,
-        "event": "The Deluge began, with Polish–Lithuanian Commonwealth invaded by Swedish and Russian forces.",
-        "event_lt": "Prasidėjo Švedų tvanas – Abiejų Tautų Respubliką užpuolė švedai ir rusai."
+        "event": "This year, the Deluge began with the invasion of the Polish–Lithuanian Commonwealth by Swedish and Russian forces.",
+        "event_lt": "Šiais metais prasidėjo Švedų tvanas – Abiejų Tautų Respubliką užpuolė švedai ir rusai."
     },
     {
         "year": 1795,
@@ -41,8 +41,8 @@
     },
     {
         "year": 1863,
-        "event": "The January Uprising against Russian rule saw widespread Lithuanian participation, though it was brutally suppressed.",
-        "event_lt": "Sausio sukilimas prieš Rusijos valdžią sulaukė plataus lietuvių dalyvavimo, tačiau buvo žiauriai numalšintas."
+        "event": "This year, the January Uprising against Russian rule saw widespread Lithuanian participation, though it was brutally suppressed.",
+        "event_lt": "Šiais metais Sausio sukilimas prieš Rusijos valdžią sulaukė plataus lietuvių dalyvavimo, tačiau buvo žiauriai numalšintas."
     },
     {
         "year": 1864,
@@ -106,7 +106,7 @@
     },
     {
         "year": 2015,
-        "event": "Lithuania adopted the euro, strengthening its integration with the European Union.",
-        "event_lt": "Lietuva įsivedė eurą, dar labiau sustiprindama integraciją su Europos Sąjunga."
+        "event": "This year, Lithuania adopted the euro, strengthening its integration with the European Union.",
+        "event_lt": "Šiais metais Lietuva įsivedė eurą, dar labiau sustiprindama integraciją su Europos Sąjunga."
     }
 ]
