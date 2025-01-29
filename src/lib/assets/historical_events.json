@@ -1,82 +1,112 @@
 [
     {
         "year": 1009,
-        "event": "This year, First mention of Lithuania in writing, tied to the murder of St. Bruno by likely pagan Lithuanians."
+        "event": "This year, First mention of Lithuania in writing, tied to the murder of St. Bruno by likely pagan Lithuanians.",
+        "event_lt": "Šiais metais pirmą kartą rašytiniuose šaltiniuose paminėta Lietuva, susijusi su šv. Brunono nužudymu, kurį tikriausiai įvykdė pagonys lietuviai."
     },
     {
         "year": 1253,
-        "event": "This year, King Mindaugas's coronation solidified Lithuania, preventing conquest by Crusaders and initiating rapid expansion."
+        "event": "This year, King Mindaugas's coronation solidified Lithuania, preventing conquest by Crusaders and initiating rapid expansion.",
+        "event_lt": "Šiais metais karaliaus Mindaugo karūnavimas sustiprino Lietuvą, užkirsdamas kelią kryžiuočių užkariavimui ir pradėdamas spartų plėtimąsi."
     },
     {
         "year": 1385,
-        "event": "This year, The Union of Krėva brought Lithuanian Christianity and an alliance with Poland, ending crusades against Lithuania."
+        "event": "This year, The Union of Krėva brought Lithuanian Christianity and an alliance with Poland, ending crusades against Lithuania.",
+        "event_lt": "Šiais metais Krėvos unija atnešė Lietuvai krikščionybę ir sąjungą su Lenkija, nutraukdama kryžiaus žygius prieš Lietuvą."
     },
     {
         "year": 1410,
-        "event": "This year, The Battle of Žalgiris marked Lithuania and Poland's victory over the Teutonic Knights, showcasing Lithuania's medieval power."
+        "event": "This year, The Battle of Žalgiris marked Lithuania and Poland's victory over the Teutonic Knights, showcasing Lithuania's medieval power.",
+        "event_lt": "Šiais metais Žalgirio mūšis pažymėjo Lietuvos ir Lenkijos pergalę prieš Kryžiuočių ordiną, parodydamas Lietuvos viduramžių galią."
     },
     {
-        "year": 1503,
-        "event": "This year, Lithuania ceded one-third of its land to Muscovy, starting the enduring 'Russian menace'."
+        "year": 1413,
+        "event": "The Union of Horodło reaffirmed the Polish-Lithuanian alliance, granting Lithuanian nobles rights equal to Polish nobility.",
+        "event_lt": "Horodlės unija dar kartą patvirtino Lenkijos ir Lietuvos sąjungą, suteikdama Lietuvos bajorams teises, prilygstančias Lenkijos bajorams."
     },
     {
         "year": 1569,
-        "event": "This year, The Union of Lublin united Poland and Lithuania, reducing Lithuania's status but restoring regional strength."
+        "event": "This year, The Union of Lublin united Poland and Lithuania, reducing Lithuania's status but restoring regional strength.",
+        "event_lt": "Šiais metais Liublino unija suvienijo Lenkiją ir Lietuvą, sumažindama Lietuvos statusą, bet atkurdama regioninę galią."
     },
     {
         "year": 1655,
-        "event": "This year, The Deluge devastated Lithuania and Vilnius, marking the decline of the Polish-Lithuanian Commonwealth."
+        "event": "The Deluge began, with Polish–Lithuanian Commonwealth invaded by Swedish and Russian forces.",
+        "event_lt": "Prasidėjo Švedų tvanas – Abiejų Tautų Respubliką užpuolė švedai ir rusai."
     },
     {
         "year": 1795,
-        "event": "This year, The Third Partition of Poland-Lithuania ended the Commonwealth, with most of Lithuania under Russian control."
+        "event": "This year, The Third Partition of Poland-Lithuania ended the Commonwealth, with most of Lithuania under Russian control.",
+        "event_lt": "Šiais metais Trečiasis Abiejų Tautų Respublikos padalijimas baigė Respublikos egzistavimą, dauguma Lietuvos atsidūrė Rusijos kontrolėje."
+    },
+    {
+        "year": 1863,
+        "event": "The January Uprising against Russian rule saw widespread Lithuanian participation, though it was brutally suppressed.",
+        "event_lt": "Sausio sukilimas prieš Rusijos valdžią sulaukė plataus lietuvių dalyvavimo, tačiau buvo žiauriai numalšintas."
     },
     {
         "year": 1864,
-        "event": "This year, The Russian Empire's Lithuanian language ban fueled the Lithuanian National Revival."
+        "event": "This year, The Russian Empire's Lithuanian language ban fueled the Lithuanian National Revival.",
+        "event_lt": "Šiais metais Rusijos imperijos lietuvių kalbos draudimas paskatino Lietuvos tautinį atgimimą."
     },
     {
         "year": 1915,
-        "event": "This year, German occupation during World War I raised Lithuanian hopes for independence."
+        "event": "This year, the Kaiser’s occupation of Lithuania began.",
+        "event_lt": "Šiais metais prasidėjo kaizerinė Lietuvos okupacija."
     },
     {
         "year": 1918,
-        "event": "This year, Lithuania declared independence, restoring sovereignty for the first time since 1569."
+        "event": "This year, Lithuania declared independence, restoring sovereignty for the first time since 1569.",
+        "event_lt": "Šiais metais Lietuva paskelbė nepriklausomybę, atkurdama suverenitetą pirmą kartą nuo 1569 metų."
     },
     {
         "year": 1920,
-        "event": "This year, Poland's annexation of Vilnius ended the dream of a united Polish-Lithuanian state."
+        "event": "This year, Poland's annexation of Vilnius ended the dream of a united Polish-Lithuanian state.",
+        "event_lt": "Šiais metais Lenkijos Vilniaus aneksija nutraukė svajonę apie vieningą Lenkijos-Lietuvos valstybę."
     },
     {
         "year": 1923,
-        "event": "This year, The Klaipėda Revolt reunited Lithuania-proper with Lithuania Minor, securing international recognition."
+        "event": "This year, The Klaipėda Revolt reunited Lithuania-proper with Lithuania Minor, securing international recognition.",
+        "event_lt": "Šiais metais Klaipėdos sukilimas suvienijo Didžiąją Lietuvą su Mažąja Lietuva, užtikrindamas tarptautinį pripažinimą."
     },
     {
         "year": 1940,
-        "event": "This year, The Soviet Union occupied Lithuania, initiating genocide and oppression."
+        "event": "This year, The Soviet Union occupied Lithuania, initiating genocide and oppression.",
+        "event_lt": "Šiais metais Sovietų Sąjunga okupavo Lietuvą, pradėdama genocidą ir priespaudą."
     },
     {
         "year": 1941,
-        "event": "This year, Nazi Germany occupied Lithuania, halting Soviet oppression but initiating the Holocaust."
+        "event": "This year, Nazi Germany occupied Lithuania, halting Soviet oppression but initiating the Holocaust.",
+        "event_lt": "Šiais metais nacistinė Vokietija okupavo Lietuvą, sustabdydama sovietinę priespaudą, bet pradėdama Holokaustą."
     },
     {
         "year": 1944,
-        "event": "This year, The Soviet re-occupation brought genocide, guerilla resistance, and economic stagnation."
+        "event": "This year, The Soviet re-occupation brought genocide, guerilla resistance, and economic stagnation.",
+        "event_lt": "Šiais metais Sovietų Sąjungos reokupacija atnešė genocidą, partizaninį pasipriešinimą ir ekonominį sąstingį."
     },
     {
         "year": 1989,
-        "event": "This year, The Baltic Way symbolized Baltic unity against Soviet rule and boosted hopes for independence."
+        "event": "This year, The Baltic Way symbolized Baltic unity against Soviet rule and boosted hopes for independence.",
+        "event_lt": "Šiais metais Baltijos kelias simbolizavo Baltijos vienybę prieš sovietinę valdžią ir pakėlė nepriklausomybės viltis."
     },
     {
         "year": 1990,
-        "event": "This year, Lithuania became the first Soviet republic to declare independence, accelerating the USSR's collapse."
+        "event": "This year, Lithuania became the first Soviet republic to declare independence, accelerating the USSR's collapse.",
+        "event_lt": "Šiais metais Lietuva tapo pirmąja Sovietų Sąjungos respublika, paskelbusia nepriklausomybę, paspartindama SSRS žlugimą."
     },
     {
         "year": 1991,
-        "event": "This year, Lithuanians protected their independence during the January Events, leading to global recognition."
+        "event": "This year, Lithuanians protected their independence during the January Events, leading to global recognition.",
+        "event_lt": "Šiais metais lietuviai gynė savo nepriklausomybę per Sausio įvykius, užtikrindami pasaulinį pripažinimą."
     },
     {
         "year": 2004,
-        "event": "This year, Lithuania joined the European Union and NATO."
+        "event": "This year, Lithuania joined the European Union and NATO.",
+        "event_lt": "Šiais metais Lietuva įstojo į Europos Sąjungą ir NATO."
+    },
+    {
+        "year": 2015,
+        "event": "Lithuania adopted the euro, strengthening its integration with the European Union.",
+        "event_lt": "Lietuva įsivedė eurą, dar labiau sustiprindama integraciją su Europos Sąjunga."
     }
 ]
