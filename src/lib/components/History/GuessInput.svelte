@@ -8,16 +8,13 @@
 	export let placeholderText: string;
 
 	function onInput() {
-		const numValue = Number(inputValue);
+		let numValue = Number(inputValue);
 		if (!isNaN(numValue) && numValue >= 1 && numValue <= 2025) {
 			dispatch('input');
 		}
 	}
 	function handleInput(e: Event) {
 		const target = e.target as HTMLInputElement;
-		if (target && target.value.length > 4) {
-			target.value = target.value.slice(0, 4);
-		}
 		target.value = String(Number(target.value));
 		if (Number(target.value) > 2025) {
 			target.value = '2025';
@@ -26,6 +23,11 @@
 		if (Number(target.value) < 1) {
 			target.value = '1';
 			inputValue = '';
+		}
+	}
+	function handleKeyPress(event: KeyboardEvent) {
+		if (event.key === 'Enter') {
+			onInput();
 		}
 	}
 </script>
@@ -42,6 +44,7 @@
 		placeholder={placeholderText}
 		bind:value={inputValue}
 		on:input={handleInput}
+		on:keypress={handleKeyPress}
 	/>
 	<button
 		class="variant-filled-secondary !pl-3 !pr-2 outline-none active:opacity-80"

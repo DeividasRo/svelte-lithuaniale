@@ -30,9 +30,9 @@
 	}
 
 	function calcSizes() {
-		yd = smallScreen ? 2.52 : 2.42;
-		xd = smallScreen ? 5.9 : 5.44;
-		y = Math.round(((lat - 53.93) / yd) * (smallScreen ? 237 : 320));
+		yd = smallScreen ? 2.52 : 2.86;
+		xd = smallScreen ? 5.9 : 6.4;
+		y = Math.round(((lat - 53.94) / yd) * (smallScreen ? 237 : 320));
 		x = Math.round(((lon - 20.99) / xd) * (smallScreen ? 319 : 413));
 		if (population < 5000) {
 			$h = smallScreen ? 7 : 9;
