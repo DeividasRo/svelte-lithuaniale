@@ -5,6 +5,6 @@ type GameState = 'starting' | 'in progress' | 'won' | 'lost'
 
 export const gameStateStore: Writable<GameState> = localStorageStore('historyGameStateStore', 'starting')
 
-export const setGameStateStore = (state: GameState) => {
+export const setHistoryGameStateStore = (state: GameState) => {
     gameStateStore.set(state);
 }

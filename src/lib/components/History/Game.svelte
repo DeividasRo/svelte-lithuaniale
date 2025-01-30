@@ -11,7 +11,7 @@
 	} from '$lib/stores/history/guessesStore';
 	import { eventYearsStore, getEventData, resetEventsStore } from '$lib/stores/history/eventsStore';
 	import { answerStore, setAnswerStore } from '$lib/stores/history/answerStore';
-	import { gameStateStore, setGameStateStore } from '$lib/stores/history/gameStateStore';
+	import { gameStateStore, setHistoryGameStateStore } from '$lib/stores/history/gameStateStore';
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';
@@ -24,29 +24,11 @@
 		return Math.floor(Math.abs(timeDiff / (1000 * 3600 * 24))) % options.length;
 	};
 
-	const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
-		const savedIndex = Math.floor(
-			Math.abs((savedDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))
-		);
-		const currentIndex = Math.floor(
-			Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
-		);
-		return savedIndex !== currentIndex;
-	};
-
-	if (
-		$gameStateStore != 'starting' &&
-		isStateUpdateRequired(new Date($savedDateStore), $startDateStore)
-	) {
-		setGameStateStore('starting');
-	}
-
 	if ($gameStateStore == 'starting') {
 		resetEventsStore();
 		resetGuessesStore();
 		setAnswerStore($eventYearsStore, getEventIndexForToday($startDateStore, $eventYearsStore));
-		updateSavedDateStore();
-		setGameStateStore('in progress');
+		setHistoryGameStateStore('in progress');
 	}
 
 	function handleInput() {
@@ -55,9 +37,9 @@
 		addToGuessesStore(Number(currentGuess), difference);
 
 		if (Number(currentGuess) == $answerStore) {
-			setGameStateStore('won');
+			setHistoryGameStateStore('won');
 		} else if ($guessesStore.length == maxGuessCount) {
-			setGameStateStore('lost');
+			setHistoryGameStateStore('lost');
 		} else {
 			currentGuess = '';
 		}
