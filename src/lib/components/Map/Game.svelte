@@ -17,7 +17,7 @@
 		resetCitiesStore
 	} from '$lib/stores/map/citiesStore';
 	import { answerStore, setAnswerStore } from '$lib/stores/map/answerStore';
-	import { gameStateStore, setGameStateStore } from '$lib/stores/map/gameStateStore';
+	import { gameStateStore, setMapGameStateStore } from '$lib/stores/map/gameStateStore';
 	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';
@@ -30,29 +30,11 @@
 		return Math.floor(Math.abs(timeDiff / (1000 * 3600 * 24))) % options.length;
 	};
 
-	const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
-		const savedIndex = Math.floor(
-			Math.abs((savedDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))
-		);
-		const currentIndex = Math.floor(
-			Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
-		);
-		return savedIndex !== currentIndex;
-	};
-
-	if (
-		$gameStateStore != 'starting' &&
-		isStateUpdateRequired(new Date($savedDateStore), $startDateStore)
-	) {
-		setGameStateStore('starting');
-	}
-
 	if ($gameStateStore == 'starting') {
 		resetGuessesStore();
 		resetCitiesStore();
 		setAnswerStore($cityNamesStore, getCityIndexForToday($startDateStore, $cityNamesStore));
-		updateSavedDateStore();
-		setGameStateStore('in progress');
+		setMapGameStateStore('in progress');
 	}
 
 	function handleInput() {
@@ -71,9 +53,9 @@
 		removeCityStoreName(guessCityData.city);
 
 		if (currentGuess == $answerStore) {
-			setGameStateStore('won');
+			setMapGameStateStore('won');
 		} else if ($guessesStore.length == maxGuessCount) {
-			setGameStateStore('lost');
+			setMapGameStateStore('lost');
 			setCityGuessStatus($answerStore, true);
 		} else {
 			currentGuess = '';

@@ -1,12 +1,30 @@
 <script lang="ts">
 	import MapGame from '$lib/components/Map/Game.svelte';
+	import HistoryGame from '$lib/components/History/Game.svelte';
 	import LanguageSelectButton from '$lib/components/LanguageSelectButton.svelte';
 	import GameModeButton from '$lib/components/GameModeButton.svelte';
 	import { gameModeStore } from '$lib/stores/gameModeStore';
 	import { get } from 'svelte/store';
-	import HistoryGame from '$lib/components/History/Game.svelte';
+	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
+	import { setHistoryGameStateStore } from '$lib/stores/history/gameStateStore';
+	import { setMapGameStateStore } from '$lib/stores/map/gameStateStore';
 
 	let currentGame = get(gameModeStore);
+	const isStateUpdateRequired = (savedDate: Date, startDate: Date) => {
+		const savedIndex = Math.floor(
+			Math.abs((savedDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))
+		);
+		const currentIndex = Math.floor(
+			Math.abs((new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24))
+		);
+		return savedIndex !== currentIndex;
+	};
+
+	if (isStateUpdateRequired(new Date($savedDateStore), $startDateStore)) {
+		setMapGameStateStore('starting');
+		setHistoryGameStateStore('starting');
+		updateSavedDateStore();
+	}
 
 	function switchGameMode(event: CustomEvent<{ mode: number }>) {
 		const { mode } = event.detail;
