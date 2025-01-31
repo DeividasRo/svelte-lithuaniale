@@ -12,7 +12,7 @@
 	import { eventYearsStore, getEventData, resetEventsStore } from '$lib/stores/history/eventsStore';
 	import { answerStore, setAnswerStore } from '$lib/stores/history/answerStore';
 	import { gameStateStore, setHistoryGameStateStore } from '$lib/stores/history/gameStateStore';
-	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
+	import { startDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';
 

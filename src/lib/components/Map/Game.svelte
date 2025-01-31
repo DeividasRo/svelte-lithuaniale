@@ -18,7 +18,7 @@
 	} from '$lib/stores/map/citiesStore';
 	import { answerStore, setAnswerStore } from '$lib/stores/map/answerStore';
 	import { gameStateStore, setMapGameStateStore } from '$lib/stores/map/gameStateStore';
-	import { startDateStore, savedDateStore, updateSavedDateStore } from '$lib/stores/dateStore';
+	import { startDateStore } from '$lib/stores/dateStore';
 	import { languageStore } from '$lib/stores/languageStore';
 	import languagesJson from '$lib/assets/languages.json';
 
