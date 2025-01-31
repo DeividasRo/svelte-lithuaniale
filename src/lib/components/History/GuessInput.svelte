@@ -45,6 +45,7 @@
 		bind:value={inputValue}
 		on:input={handleInput}
 		on:keypress={handleKeyPress}
+		style="-moz-appearance: textfield;"
 	/>
 	<button
 		class="variant-filled-secondary !pl-3 !pr-2 outline-none active:opacity-80"
